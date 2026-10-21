@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gambito · learn chess openings from real games</title>
+<meta name="description" content="Duolingo-style chess opening trainer built from real chess.com games at your rating.">
+<link rel="icon" href="pieces/wN.svg">
+<link rel="stylesheet" href="app/style.css">
+</head>
+<body>
+<div id="app">
+  <!-- left nav (desktop) / bottom nav (mobile) -->
+  <nav class="sidenav" id="sidenav">
+    <div class="logo"><span class="logo-badge"><img src="pieces/bN.svg" alt=""></span><span class="logo-word">gambito</span></div>
+    <button class="navbtn" data-screen="learn"><span class="ico">🏠</span><span>Learn</span></button>
+    <button class="navbtn" data-screen="play"><span class="ico">⚔️</span><span>Play it out</span></button>
+    <button class="navbtn" data-screen="stats"><span class="ico">📊</span><span>Your league</span></button>
+    <button class="navbtn" data-screen="profile"><span class="ico">⚙️</span><span>Profile</span></button>
+  </nav>
+
+  <main class="main">
+    <header class="topbar" id="topbar">
+      <button class="chip band-chip" id="bandChip" title="Change your rating band"><span id="bandChipText">Pick rating</span> ▾</button>
+      <button class="chip color-chip" id="colorChip" title="Switch colour"><img id="colorChipImg" src="pieces/wK.svg" alt=""><span id="colorChipText">White</span></button>
+      <div class="spacer"></div>
+      <button class="stat-pill streak" title="Daily streak"><span class="fl">🔥</span><b id="streakN">0</b></button>
+      <div class="stat-pill xp" title="Total XP"><span>⚡</span><b id="xpN">0</b></div>
+    </header>
+
+    <section class="screen" id="screen-learn">
+      <div class="learn-layout">
+        <div class="path-col" id="pathCol"></div>
+        <aside class="side-col">
+          <div class="card streak-card" id="streakCard"></div>
+          <div class="card goal-card">
+            <div class="card-title">Daily goal</div>
+            <div class="goal-row"><div class="goal-bar"><div class="goal-fill" id="goalFill"></div></div><span id="goalText">0/30 XP</span></div>
+          </div>
+          <div class="card band-card" id="bandCard"></div>
+          <div class="card tip-card"><div class="card-title">How it works</div>
+            <p>Every lesson is built from <b>real chess.com 10-minute games</b> at your rating, checked by <b>Stockfish 19</b>. Opponents in lessons and games play the moves real players at your level actually play.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-play">
+      <div class="play-setup card" id="playSetup">
+        <div class="mascot-row"><div class="mascot big"><img src="pieces/bN.svg" alt=""></div>
+          <div class="bubble">Pick a side. Your rival plays exactly like a real <b id="playBandName">player</b>: the same openings, and the same mistakes, at the same rate.</div></div>
+        <div><div class="card-title" style="font-size:16px">Rival's rating</div><div class="band-grid" id="rivalBands"></div></div>
+        <div class="card-title" style="font-size:16px;margin-bottom:-10px">Your side</div>
+        <div class="choice-row">
+          <button class="pick" data-color="w"><img src="pieces/wK.svg" alt=""><span>White</span></button>
+          <button class="pick" data-color="b"><img src="pieces/bK.svg" alt=""><span>Black</span></button>
+          <button class="pick" data-color="r"><span class="dice">🎲</span><span>Random</span></button>
+        </div>
+        <button class="btn green wide" id="startGameBtn">Start game</button>
+      </div>
+      <div class="game" id="game" hidden>
+        <div class="game-board-col">
+          <div class="player-tag" id="oppTag"></div>
+          <div class="board-host" id="playBoard"></div>
+          <div class="player-tag you" id="youTag"></div>
+        </div>
+        <div class="game-side card">
+          <div class="coach" id="playCoach"></div>
+          <div class="move-list" id="playMoves"></div>
+          <div class="btn-row">
+            <button class="btn white" id="hintBtn">💡 Hint</button>
+            <button class="btn white" id="flipBtn">🔄 Flip</button>
+            <button class="btn white" id="resignBtn">🏳️ End game</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-stats"><div id="statsBody"></div></section>
+    <section class="screen" id="screen-profile"><div id="profileBody"></div></section>
+  </main>
+</div>
+
+<!-- full-screen lesson -->
+<div class="lesson" id="lesson" hidden>
+  <div class="lesson-top">
+    <button class="x-btn" id="lessonClose" title="Quit">✕</button>
+    <div class="progress"><div class="progress-fill" id="lessonProgress"></div></div>
+  </div>
+  <div class="lesson-body">
+    <div class="lesson-prompt">
+      <div class="badge-new" id="lessonBadge" hidden>NEW MOVE</div>
+      <h2 id="lessonTitle">Lesson</h2>
+      <p class="lesson-sub" id="lessonSub"></p>
+      <div class="mascot-row small"><div class="mascot"><img src="pieces/bN.svg" alt=""></div><div class="bubble" id="lessonBubble"></div></div>
+    </div>
+    <div class="lesson-stage">
+      <div class="board-host" id="lessonBoard"></div>
+      <div class="options" id="lessonOptions" hidden></div>
+    </div>
+  </div>
+  <div class="sheet" id="sheet">
+    <div class="sheet-inner">
+      <div class="sheet-msg" id="sheetMsg"></div>
+      <button class="btn green" id="sheetBtn">Continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div class="modal-back" id="modal" hidden><div class="modal card" id="modalBody"></div></div>
+<div class="toast" id="toast" hidden></div>
+<canvas id="confetti"></canvas>
+<pre id="selftest" hidden></pre>
+<!-- One classic script (not a module) so the site also runs when this file is opened straight from disk.
+     Built from app/src/*.js by "03 System/(C) pipeline/site_build.py". -->
+<script src="app/gambito.js"></script>
+</body>
+</html>

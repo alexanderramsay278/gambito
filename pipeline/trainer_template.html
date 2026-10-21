@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opening Trainer · 300-Elo Gambit Repertoire</title>
+<style>
+:root{--light:#f0d9b5;--dark:#b58863;--bg:#161512;--panel:#262421;--panel2:#302e2b;--text:#e8e6e3;--muted:#a09d98;--accent:#759900;--accent2:#3893e8;--bad:#d64f4f;--gold:#e3b341}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button{font:inherit;color:inherit;background:var(--panel2);border:1px solid #45423e;border-radius:6px;padding:7px 12px;cursor:pointer}
+button:hover{background:#3b3935}
+button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+button:disabled{opacity:.45;cursor:default}
+.app{display:flex;gap:22px;padding:18px;max-width:1240px;margin:0 auto;align-items:flex-start;flex-wrap:wrap}
+.left{flex:none}
+.board-wrap{position:relative;width:min(92vw,620px);aspect-ratio:1/1;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.5)}
+.board{display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);width:100%;height:100%;user-select:none;-webkit-user-select:none;touch-action:none;border-radius:4px;overflow:hidden}
+.sq{position:relative}
+.sq.l{background:var(--light)}.sq.d{background:var(--dark)}
+.sq.last::before{content:"";position:absolute;inset:0;background:rgba(155,199,0,.41)}
+.sq.sel::before{content:"";position:absolute;inset:0;background:rgba(20,85,30,.5)}
+.sq.hint::after{content:"";position:absolute;inset:6%;border:4px solid var(--gold);border-radius:50%}
+.sq.bad::before{content:"";position:absolute;inset:0;background:rgba(214,79,79,.65)}
+.sq.good::before{content:"";position:absolute;inset:0;background:rgba(117,153,0,.65)}
+.sq .dot{position:absolute;left:50%;top:50%;width:26%;height:26%;margin:-13% 0 0 -13%;border-radius:50%;background:rgba(20,85,30,.45);z-index:2}
+.sq .pc{position:absolute;inset:0;background-size:100% 100%;z-index:1;cursor:grab}
+.sq .pc.lift{opacity:.25}
+.sq .cr,.sq .cf{position:absolute;font-size:11px;font-weight:700;z-index:3;pointer-events:none}
+.sq .cr{left:3px;top:2px}.sq .cf{right:4px;bottom:1px}
+.sq.l .cr,.sq.l .cf{color:var(--dark)}.sq.d .cr,.sq.d .cf{color:var(--light)}
+svg.arrows{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+.ghost{position:fixed;pointer-events:none;z-index:50;background-size:100% 100%;transform:translate(-50%,-50%)}
+.evalbar{margin-top:10px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+.evalbar .bar{flex:1;height:8px;border-radius:4px;background:#000;overflow:hidden}
+.evalbar .fill{height:100%;background:#eee;width:50%;transition:width .3s}
+.panel{flex:1;min-width:320px;max-width:560px;display:flex;flex-direction:column;gap:12px}
+.card{background:var(--panel);border-radius:8px;padding:14px 16px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+h1{font-size:18px;margin:0 0 2px}
+.sub{color:var(--muted);font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.stat{background:var(--panel2);border-radius:6px;padding:8px;text-align:center}
+.stat b{display:block;font-size:20px}
+.stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.cov{margin-top:10px;font-size:13px;color:var(--muted)}
+.cov .bar{height:8px;background:var(--panel2);border-radius:4px;overflow:hidden;margin-top:4px}
+.cov .fill{height:100%;background:var(--accent)}
+.linehead .sec{color:var(--accent2);font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+.linehead .name{font-size:17px;font-weight:650;margin-top:2px}
+.linehead .meta{font-size:12px;color:var(--muted);margin-top:2px}
+.coach{min-height:110px}
+.coach .msg{font-size:15.5px}
+.coach .msg.good{color:#9fd356}.coach .msg.bad{color:#ff8a80}.coach .msg.info{color:var(--text)}
+.coach .note{margin-top:8px;padding:9px 11px;background:var(--panel2);border-left:3px solid var(--accent2);border-radius:4px;font-size:14.5px}
+.coach .note.trap{border-left-color:var(--gold)}
+.coach .opp{margin-top:8px;font-size:13px;color:var(--muted)}
+.moves{font-family:ui-monospace,Consolas,monospace;font-size:13.5px;line-height:1.7;color:#cfccc7;min-height:24px}
+.moves .cur{background:var(--accent);color:#fff;border-radius:3px;padding:0 3px}
+.explore-list{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.explore-list button{text-align:left;display:flex;justify-content:space-between;gap:10px}
+.explore-list .pct{color:var(--muted);font-variant-numeric:tabular-nums}
+.kbd{font-size:12px;color:var(--muted)}
+.foot{font-size:11.5px;color:#7d7a75;margin-top:4px}
+#test-out{white-space:pre-wrap;font-family:monospace;font-size:12px;background:#000;color:#0f0;padding:8px;display:none}
+@media (max-width:1000px){.panel{max-width:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="left">
+    <div class="board-wrap" id="wrap">
+      <div class="board" id="board"></div>
+      <svg class="arrows" id="arrows" viewBox="0 0 8 8"></svg>
+    </div>
+    <div class="evalbar"><span id="evaltxt">Eval —</span><div class="bar"><div class="fill" id="evalfill"></div></div></div>
+    <div class="foot">Engine evals: Stockfish 19. Frequencies: real chess.com 10|0 games, both players rated 200–400.</div>
+  </div>
+  <div class="panel">
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <div><h1 id="title">Opening Trainer</h1><div class="sub" id="subtitle"></div></div>
+        <div class="row" id="courseTabs"></div>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="cov" id="cov"></div>
+    </div>
+    <div class="card">
+      <div class="row" id="modes">
+        <button data-mode="learn">Learn new</button>
+        <button data-mode="review">Review due</button>
+        <button data-mode="play">Play vs 300s</button>
+        <button data-mode="explore">Explore</button>
+      </div>
+    </div>
+    <div class="card linehead" id="linehead"></div>
+    <div class="card coach" id="coach"></div>
+    <div class="card">
+      <div class="moves" id="moves"></div>
+      <div class="row" style="margin-top:10px" id="controls">
+        <button id="bHint" title="H">Hint</button>
+        <button id="bShow" title="S">Show move</button>
+        <button id="bRestart" title="R">Restart</button>
+        <button id="bNext" title="N">Next line</button>
+        <button id="bBack" title="Backspace">Back</button>
+        <button id="bFlip" title="F">Flip</button>
+      </div>
+      <div class="kbd" style="margin-top:8px">Keys: H hint · S show · R restart · N next · F flip · ← back (explore). Drag or click-click to move.</div>
+      <div class="explore-list" id="explore"></div>
+    </div>
+    <div class="card"><div class="row" style="justify-content:space-between"><span class="sub" id="savenote"></span><button id="bReset">Reset progress</button></div></div>
+    <div id="test-out"></div>
+  </div>
+</div>
+<script>const REP = /*__REP_DATA__*/null;</script>
+<script>
+'use strict';
+const qs = new URLSearchParams(location.search);
+const TEST = qs.get('test') === '1';
+const LS_KEY = 'jarvis-opening-trainer-v1';
+const DAY = 86400000, RELEARN_MS = 5 * 60000;
+const INTERVAL_DAYS = [0, 1, 3, 7, 16, 35, 75];
+const $ = id => document.getElementById(id);
+const FILES = 'abcdefgh';
+
+// ---------- storage ----------
+let MEM = {};
+function loadDB() { if (TEST) return MEM; try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch (e) { return {}; } }
+function saveDB() { if (TEST) { MEM = DB; return; } try { localStorage.setItem(LS_KEY, JSON.stringify(DB)); } catch (e) {} }
+let DB = loadDB();
+DB.srs = DB.srs || {}; DB.course = DB.course || REP.courses[0].id; DB.playStats = DB.playStats || {};
+
+// ---------- state ----------
+const S = { course: null, mode: 'learn', line: null, step: 0, node: 0, expect: null, mistakes: 0, wrong: 0,
+  hint: 0, sel: null, orient: 'w', finished: false, hist: [], last: null, timer: null, stack: [], marks: {}, arrowsOn: [], playCorrect: 0, playTotal: 0 };
+const now = () => Date.now();
+const cur = () => S.course.nodes[S.node];
+const turnOf = n => n.f.split(' ')[1];
+const isOurs = n => turnOf(n) === S.course.color;
+const srs = id => DB.srs[S.course.id + ':' + id];
+const setSrs = (id, v) => { DB.srs[S.course.id + ':' + id] = v; saveDB(); };
+
+// ---------- board ----------
+const boardEl = $('board'), arrowsEl = $('arrows');
+const sqEls = [];
+for (let i = 0; i < 64; i++) { const d = document.createElement('div'); boardEl.appendChild(d); sqEls.push(d); }
+function idxToSq(i) { const r = Math.floor(i / 8), c = i % 8; return S.orient === 'w' ? FILES[c] + (8 - r) : FILES[7 - c] + (r + 1); }
+function sqToXY(sq) { const f = FILES.indexOf(sq[0]), r = +sq[1]; return S.orient === 'w' ? [f, 8 - r] : [7 - f, r - 1]; }
+function parseFen(fen) {
+  const pos = {}; const rows = fen.split(' ')[0].split('/');
+  for (let r = 0; r < 8; r++) { let f = 0; for (const ch of rows[r]) { if (/\d/.test(ch)) f += +ch; else { pos[FILES[f] + (8 - r)] = (ch === ch.toUpperCase() ? 'w' : 'b') + ch.toUpperCase(); f++; } } }
+  return pos;
+}
+function render() {
+  const n = cur(), pos = parseFen(n.f);
+  const legalTo = S.sel && S.expect ? (n.L || []).filter(u => u.startsWith(S.sel)).map(u => u.slice(2, 4)) : [];
+  for (let i = 0; i < 64; i++) {
+    const sq = idxToSq(i), el = sqEls[i], f = FILES.indexOf(sq[0]), r = +sq[1];
+    let cls = 'sq ' + ((f + r) % 2 === 0 ? 'l' : 'd');
+    if (S.last && (S.last[0] === sq || S.last[1] === sq)) cls += ' last';
+    if (S.sel === sq) cls += ' sel';
+    if (S.marks[sq]) cls += ' ' + S.marks[sq];
+    el.className = cls; el.dataset.sq = sq;
+    let h = '';
+    if (pos[sq]) h += `<div class="pc" data-p="${pos[sq]}" style="background-image:url('${REP.pieces[pos[sq]]}')"></div>`;
+    if (legalTo.includes(sq)) h += '<div class="dot"></div>';
+    if (i % 8 === 0) h += `<span class="cr">${sq[1]}</span>`;
+    if (i >= 56) h += `<span class="cf">${sq[0]}</span>`;
+    el.innerHTML = h;
+  }
+  drawArrows();
+  renderEval(); renderMoves(); renderStats(); renderButtons();
+}
+function renderedBoardFen() { // rebuild FEN board field from DOM (used by self-test)
+  const rows = [];
+  for (let r = 8; r >= 1; r--) { let row = '', e = 0;
+    for (let f = 0; f < 8; f++) { const el = sqEls.find(x => x.dataset.sq === FILES[f] + r); const p = el.querySelector('.pc');
+      if (!p) { e++; continue; } if (e) { row += e; e = 0; } const code = p.dataset.p; row += code[0] === 'w' ? code[1] : code[1].toLowerCase(); }
+    if (e) row += e; rows.push(row); }
+  return rows.join('/');
+}
+function drawArrows() {
+  let h = '<defs>' + ['g', 'b', 'o'].map(c => `<marker id="ah${c}" markerWidth="4" markerHeight="4" refX="2.05" refY="2" orient="auto"><path d="M0,0 L4,2 L0,4 z" fill="${c === 'g' ? '#15781b' : c === 'b' ? '#003088' : '#c47b00'}"/></marker>`).join('') + '</defs>';
+  for (const a of S.arrowsOn) {
+    const [x1, y1] = sqToXY(a.u.slice(0, 2)), [x2, y2] = sqToXY(a.u.slice(2, 4));
+    const cx1 = x1 + .5, cy1 = y1 + .5, cx2 = x2 + .5, cy2 = y2 + .5, dx = cx2 - cx1, dy = cy2 - cy1, L = Math.hypot(dx, dy);
+    const ex = cx2 - dx / L * .32, ey = cy2 - dy / L * .32;
+    const col = a.c === 'g' ? '#15781b' : a.c === 'b' ? '#003088' : '#c47b00';
+    h += `<line x1="${cx1}" y1="${cy1}" x2="${ex}" y2="${ey}" stroke="${col}" stroke-width="${a.w || .16}" stroke-linecap="round" opacity="${a.op || .82}" marker-end="url(#ah${a.c})"/>`;
+  }
+  arrowsEl.innerHTML = h;
+}
+function renderEval() {
+  const e = S.lastEval;
+  if (e === undefined || e === null) { $('evaltxt').textContent = 'Eval —'; $('evalfill').style.width = '50%'; return; }
+  let txt;
+  if (Math.abs(e) >= 9000) { const plies = 10000 - Math.abs(e); txt = (e > 0 ? '' : '−') + '#' + Math.max(1, Math.ceil(plies / 2)); }
+  else txt = (e > 0 ? '+' : e < 0 ? '−' : '') + (Math.abs(e) / 100).toFixed(2);
+  $('evaltxt').textContent = 'Stockfish: ' + txt + (e > 30 ? ' (White better)' : e < -30 ? ' (Black better)' : ' (equal)');
+  const wp = 1 / (1 + Math.exp(-0.00368208 * Math.max(-2000, Math.min(2000, e))));
+  $('evalfill').style.width = (100 * wp).toFixed(1) + '%';
+}
+function renderMoves() {
+  let h = '';
+  S.hist.forEach((m, i) => { const ply = m.ply; if (ply % 2 === 0) h += `<b>${ply / 2 + 1}.</b>`; else if (i === 0) h += `<b>${(ply + 1) / 2}...</b>`;
+    h += `<span class="${i === S.hist.length - 1 ? 'cur' : ''}">${m.s}</span> `; });
+  $('moves').innerHTML = h || '<span class="sub">Starting position</span>';
+}
+
+// ---------- input (click-click + drag) ----------
+let drag = null;
+function sqFromPoint(x, y) { const r = boardEl.getBoundingClientRect(); const c = Math.floor((x - r.left) / r.width * 8), rw = Math.floor((y - r.top) / r.height * 8);
+  if (c < 0 || c > 7 || rw < 0 || rw > 7) return null; return idxToSq(rw * 8 + c); }
+boardEl.addEventListener('pointerdown', e => {
+  const sq = sqFromPoint(e.clientX, e.clientY); if (!sq) return;
+  if (S.mode === 'explore') { exploreClick(sq); return; }
+  if (!S.expect) return;
+  const pos = parseFen(cur().f), pc = pos[sq], turn = turnOf(cur());
+  if (S.sel && sq !== S.sel && !(pc && pc[0] === turn)) { const from = S.sel; S.sel = null; tryMove(from, sq); return; }
+  if (pc && pc[0] === turn) {
+    S.sel = sq; render();
+    const r = boardEl.getBoundingClientRect(), size = r.width / 8;
+    const g = document.createElement('div'); g.className = 'ghost'; g.style.width = g.style.height = size + 'px';
+    g.style.backgroundImage = `url('${REP.pieces[pc]}')`; g.style.left = e.clientX + 'px'; g.style.top = e.clientY + 'px';
+    document.body.appendChild(g); drag = { from: sq, g, moved: false };
+    const pe = sqEls.find(x => x.dataset.sq === sq).querySelector('.pc'); if (pe) pe.classList.add('lift');
+    boardEl.setPointerCapture(e.pointerId);
+  } else { S.sel = null; render(); }
+});
+boardEl.addEventListener('pointermove', e => { if (!drag) return; drag.moved = true; drag.g.style.left = e.clientX + 'px'; drag.g.style.top = e.clientY + 'px'; });
+boardEl.addEventListener('pointerup', e => {
+  if (!drag) return; const d = drag; drag = null; d.g.remove();
+  const to = sqFromPoint(e.clientX, e.clientY);
+  if (to && to !== d.from) { S.sel = null; tryMove(d.from, to); } else render();
+});
+boardEl.addEventListener('pointercancel', () => { if (drag) { drag.g.remove(); drag = null; render(); } });
+
+function normalize(from, to) {
+  let u = from + to; const pos = parseFen(cur().f);
+  const castle = { e1h1: 'e1g1', e1a1: 'e1c1', e8h8: 'e8g8', e8a8: 'e8c8' };
+  if (castle[u] && pos[from] && pos[from][1] === 'K') u = castle[u];
+  return u;
+}
+function tryMove(from, to) {
+  if (!S.expect) { render(); return; }
+  const u = normalize(from, to), n = cur();
+  const legal = (n.L || []).map(x => x.slice(0, 4));
+  if (legal.length && !legal.includes(u)) { render(); return; }      // illegal: snap back silently
+  if (u === S.expect.u.slice(0, 4)) correct(); else wrongMove(u);
+}
+
+// ---------- flow ----------
+function schedule(fn, ms) { clearTimeout(S.timer); if (TEST) fn(); else S.timer = setTimeout(fn, ms === undefined ? 420 : ms); }
+function setMsg(msg, cls, note, opp, trap) {
+  let h = `<div class="msg ${cls || 'info'}">${msg}</div>`;
+  if (note) h += `<div class="note ${trap ? 'trap' : ''}">${fmt(note)}</div>`;
+  if (opp) h += `<div class="opp">${opp}</div>`;
+  $('coach').innerHTML = h;
+}
+function fmt(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
+function sanLabel(m, ply) { return (ply % 2 === 0 ? (ply / 2 + 1) + '.' : Math.floor(ply / 2) + 1 + '...') + m.s; }
+function pct(p) { return p >= .095 ? Math.round(p * 100) + '%' : (p * 100).toFixed(1) + '%'; }
+function freqText(w) { if (!w) return 'rarely'; if (w >= 0.05) return 'in about ' + pct(w) + ' of your games'; const n = 1 / w; const r = n < 100 ? Math.round(n) : n < 1000 ? Math.round(n / 10) * 10 : Math.round(n / 100) * 100; return 'about once every ' + r.toLocaleString() + ' games'; }
+function plyOf(n) { const parts = n.f.split(' '); return (parseInt(parts[5]) - 1) * 2 + (parts[1] === 'b' ? 1 : 0); }
+
+function applyMove(m) {
+  const ply = plyOf(cur());
+  S.hist.push({ s: m.s, ply }); S.last = [m.u.slice(0, 2), m.u.slice(2, 4)]; S.node = m.c; S.lastEval = m.e;
+  S.sel = null; S.marks = {}; S.arrowsOn = []; S.hint = 0; S.wrong = 0;
+  return ply;
+}
+function oppMessage(m, ply) {
+  const share = m.p != null ? `${pct(m.p)} of 300-rated players play this here${m.n ? ' (n=' + m.n + ')' : ''}` : '';
+  return { msg: `Opponent played <b>${sanLabel(m, ply)}</b>`, opp: share };
+}
+function startLine(line, mode) {
+  clearTimeout(S.timer);
+  Object.assign(S, { mode, line, step: 0, node: 0, expect: null, mistakes: 0, wrong: 0, hint: 0, sel: null, finished: false, hist: [], last: null, marks: {}, arrowsOn: [], lastEval: null });
+  setModeButtons(); renderLineHead(); render(); advance();
+}
+function startPlay() {
+  clearTimeout(S.timer);
+  Object.assign(S, { mode: 'play', line: null, step: 0, node: 0, expect: null, mistakes: 0, wrong: 0, hint: 0, sel: null, finished: false, hist: [], last: null, marks: {}, arrowsOn: [], lastEval: null, playCorrect: 0, playTotal: 0 });
+  setModeButtons(); renderLineHead(); render(); advance();
+}
+function advance() {
+  const n = cur();
+  if (S.mode === 'play') {
+    if (!n.m.length) return finish();
+    if (isOurs(n)) { S.expect = n.m.find(m => m.o); prompt(); return; }
+    const opp = n.m.filter(m => !m.o); const m = weighted(opp);
+    S.expect = null; renderButtons();
+    schedule(() => { const ply = applyMove(m); const om = oppMessage(m, ply); setMsg(om.msg, 'info', m.t, om.opp, m.g === 'trap'); render(); advance(); });
+    return;
+  }
+  if (S.step >= S.line.path.length - 1) return finish();
+  const nxt = S.line.path[S.step + 1]; const m = n.m.find(x => x.c === nxt);
+  if (m.o) { S.expect = m; prompt(); }
+  else { S.expect = null; renderButtons();
+    schedule(() => { const ply = applyMove(m); S.step++; const om = oppMessage(m, ply); setMsg(om.msg, 'info', m.t, om.opp, m.g === 'trap'); render(); advance(); }); }
+}
+function prompt() {
+  const m = S.expect, ply = plyOf(cur());
+  if (S.mode === 'learn') {
+    S.arrowsOn = [{ u: m.u, c: 'g' }];
+    const prev = $('coach').innerHTML.includes('Opponent played') ? $('coach').querySelector('.msg').outerHTML + ($('coach').querySelector('.opp') ? $('coach').querySelector('.opp').outerHTML : '') : '';
+    $('coach').innerHTML = prev + `<div class="msg good" style="margin-top:8px">Your move: <b>${sanLabel(m, ply)}</b>. Play the arrow.</div>` + (m.t ? `<div class="note ${m.g === 'trap' ? 'trap' : ''}">${fmt(m.t)}</div>` : '');
+  } else {
+    const c = $('coach'); const hasOpp = c.innerHTML.includes('Opponent played');
+    if (!hasOpp) setMsg('Your move. What does the repertoire play here?', 'info');
+    else c.insertAdjacentHTML('beforeend', '<div class="msg info" style="margin-top:8px">Your move.</div>');
+  }
+  render();
+}
+function correct() {
+  const m = S.expect; S.expect = null;
+  const ply = applyMove(m);
+  if (S.mode === 'play') { S.playTotal++; if (!S.marks.__miss) S.playCorrect++; }
+  S.marks = { [m.u.slice(2, 4)]: 'good' };
+  setMsg(`✓ <b>${sanLabel(m, ply)}</b>`, 'good', m.t, null, m.g === 'trap');
+  if (S.mode === 'line' || S.mode === 'learn' || S.mode === 'review') S.step++;
+  render();
+  schedule(() => { S.marks = {}; render(); advance(); }, 350);
+}
+function wrongMove(u) {
+  S.mistakes++; S.wrong++;
+  if (S.mode === 'play') S.missThis = true;
+  S.marks = { [u.slice(0, 2)]: 'bad', [u.slice(2, 4)]: 'bad' };
+  const m = S.expect, ply = plyOf(cur());
+  if (S.wrong >= 2 || S.mode === 'learn') {
+    S.arrowsOn = [{ u: m.u, c: 'g' }];
+    setMsg(`✗ Not that. The repertoire move is <b>${sanLabel(m, ply)}</b>. Play it to continue.`, 'bad', m.t, null, m.g === 'trap');
+  } else {
+    setMsg('✗ Not the repertoire move. One more try. The piece to move is circled.', 'bad');
+    S.marks[m.u.slice(0, 2)] = 'hint';
+  }
+  render();
+  if (!TEST) setTimeout(() => { for (const k in S.marks) if (S.marks[k] === 'bad') delete S.marks[k]; render(); }, 650);
+}
+function finish() {
+  S.finished = true; S.expect = null;
+  const L = S.line;
+  if (S.mode === 'learn') {
+    setSrs(L.id, { box: 0, due: now(), reps: 0, lapses: 0, learned: now() });
+    setMsg(`Line learned: <b>${L.name}</b>. It's now in your review queue. Review it from memory next.`, 'good');
+  } else if (S.mode === 'review') {
+    const st = srs(L.id) || { box: 0, reps: 0, lapses: 0 };
+    if (S.mistakes === 0) { st.box = Math.min(st.box + 1, INTERVAL_DAYS.length - 1); st.due = now() + INTERVAL_DAYS[st.box] * DAY; st.reps++;
+      setMsg(`Perfect: <b>${L.name}</b>. Next review in ${INTERVAL_DAYS[st.box]} day${INTERVAL_DAYS[st.box] > 1 ? 's' : ''}.`, 'good'); }
+    else { st.box = 0; st.lapses++; st.due = now() + RELEARN_MS; st.reps++;
+      setMsg(`${S.mistakes} slip${S.mistakes > 1 ? 's' : ''} in <b>${L.name}</b>. This line comes back in 5 minutes.`, 'bad'); }
+    st.last = now(); setSrs(L.id, st);
+  } else if (S.mode === 'play') {
+    const ps = DB.playStats[S.course.id] || { games: 0, perfect: 0 }; ps.games++; if (S.mistakes === 0) ps.perfect++; DB.playStats[S.course.id] = ps; saveDB();
+    setMsg(`End of book. ${S.mistakes === 0 ? 'Perfect run ✓' : S.mistakes + ' mistake' + (S.mistakes > 1 ? 's' : '')}. From here you're on your own: develop, castle, and check every capture.`, S.mistakes ? 'bad' : 'good');
+  }
+  renderLineHead(); render();
+}
+function weighted(moves) {
+  const wt = m => (m.q != null ? m.q : (m.p || 0)) + 1e-6;
+  const tot = moves.reduce((a, m) => a + wt(m), 0); let r = Math.random() * tot;
+  for (const m of moves) { r -= wt(m); if (r <= 0) return m; } return moves[moves.length - 1];
+}
+
+// ---------- queues ----------
+function lineState(L) { return srs(L.id); }
+function dueLines() { const t = now(); return S.course.lines.filter(L => { const s = lineState(L); return s && s.due <= t; }).sort((a, b) => lineState(a).due - lineState(b).due || b.w - a.w); }
+function newLines() { return S.course.lines.filter(L => !lineState(L)).sort((a, b) => b.w - a.w); }
+function nextLine() {
+  if (S.mode === 'play') return startPlay();
+  if (S.mode === 'explore') return startExplore();
+  const q = S.mode === 'review' ? dueLines() : newLines();
+  if (!q.length) {
+    if (S.mode === 'review') { const nl = newLines(); setModeButtons(); $('linehead').innerHTML = '<div class="name">Nothing due 🎉</div><div class="meta">' + (nl.length ? 'Learn a new line, or play vs 300s.' : 'All lines learned. Use Play vs 300s.') + '</div>'; }
+    else $('linehead').innerHTML = '<div class="name">Every line learned ✓</div><div class="meta">Switch to Review or Play vs 300s.</div>';
+    clearBoardForIdle(); return;
+  }
+  startLine(q[0], S.mode);
+}
+function clearBoardForIdle() { Object.assign(S, { node: 0, hist: [], last: null, expect: null, arrowsOn: [], marks: {}, lastEval: null, line: null }); setMsg('Pick a mode above.', 'info'); render(); }
+
+// ---------- explore ----------
+function startExplore() { clearTimeout(S.timer); Object.assign(S, { mode: 'explore', line: null, node: 0, hist: [], last: null, expect: null, stack: [], marks: {}, lastEval: null }); setModeButtons(); renderLineHead(); exploreRender(); }
+function exploreGo(m) { S.stack.push({ node: S.node, hist: S.hist.slice(), last: S.last, ev: S.lastEval }); applyMove(m); exploreRender(m); }
+function exploreBack() { const p = S.stack.pop(); if (!p) return; S.node = p.node; S.hist = p.hist; S.last = p.last; S.lastEval = p.ev; exploreRender(); }
+function exploreClick(sq) {
+  const n = cur();
+  if (!S.sel) { if (n.m.some(m => m.u.startsWith(sq))) { S.sel = sq; render(); } return; }
+  const u = normalize(S.sel, sq); S.sel = null; const m = n.m.find(x => x.u.slice(0, 4) === u); if (m) exploreGo(m); else render();
+}
+function exploreRender(from) {
+  const n = cur(), ours = isOurs(n), ply = plyOf(n);
+  S.arrowsOn = n.m.slice(0, 8).map(m => ({ u: m.u, c: m.o ? 'g' : 'b', w: m.o ? .17 : Math.max(.07, Math.min(.2, (m.p || .02) * .45)), op: m.o ? .85 : .65 }));
+  if (from) { const pm = from; setMsg(`${pm.o ? 'Your move' : 'Opponent'}: <b>${sanLabel(pm, plyOf(S.course.nodes[S.stack[S.stack.length - 1].node]))}</b>`, 'info', pm.t, pm.p != null && !pm.o ? `${pct(pm.p)} of 300-rated players play this here${pm.n ? ' (n=' + pm.n + ')' : ''}` : '', pm.g === 'trap'); }
+  else setMsg(n.m.length ? (ours ? 'Your move in the repertoire is shown in green.' : 'Opponent replies (blue arrows, thicker = more common). Click one to follow it.') : 'End of the repertoire line.', 'info');
+  const list = n.m.slice().sort((a, b) => (b.o - a.o) || ((b.p || 0) - (a.p || 0)));
+  $('explore').innerHTML = list.map((m, i) => `<button data-i="${n.m.indexOf(m)}"><span>${m.o ? '✅ ' : ''}${sanLabel(m, ply)}${m.g === 'trap' ? ' ⚡' : ''}</span><span class="pct">${m.o ? 'your move' : (m.p != null ? pct(m.p) : '')}</span></button>`).join('');
+  $('explore').querySelectorAll('button').forEach(b => b.onclick = () => exploreGo(n.m[+b.dataset.i]));
+  render();
+}
+
+// ---------- panels ----------
+function renderLineHead() {
+  const el = $('linehead');
+  if (S.mode === 'explore') { el.innerHTML = '<div class="sec">Explore</div><div class="name">Browse the whole repertoire tree</div><div class="meta">Blue = opponent replies with real 300-level frequency. Green = your move.</div>'; return; }
+  if (S.mode === 'play') { el.innerHTML = '<div class="sec">Play vs 300s</div><div class="name">Opponent picks replies by how often real 200–400 players play them</div><div class="meta">Every move counts. Runs until the end of the repertoire.</div>'; return; }
+  if (!S.line) { el.innerHTML = ''; return; }
+  const L = S.line, st = srs(L.id);
+  const reveal = S.mode === 'learn' || S.finished;
+  el.innerHTML = `<div class="sec">${L.sec}</div><div class="name">${reveal ? L.name : 'Line hidden until you finish it'}</div>` +
+    `<div class="meta">Comes up ${freqText(L.w)}${st ? ' · box ' + st.box + (st.lapses ? ' · lapses ' + st.lapses : '') : ' · new'}</div>`;
+}
+function renderStats() {
+  const c = S.course, lines = c.lines, t = now();
+  let learned = 0, due = 0, mastered = 0, wL = 0, wAll = 0;
+  for (const L of lines) { wAll += L.w; const s = lineState(L); if (s) { learned++; wL += L.w; if (s.due <= t) due++; if (s.box >= 4) mastered++; } }
+  $('stats').innerHTML = [['Lines', lines.length], ['Learned', learned], ['Due now', due], ['Mastered', mastered]].map(([k, v]) => `<div class="stat"><b>${v}</b><span>${k}</span></div>`).join('');
+  const ps = DB.playStats[c.id];
+  $('cov').innerHTML = `Lines you've learned cover <b>${pct(wL)}</b> of real games (whole repertoire: ${pct(wAll)})${ps ? ` · Play runs: ${ps.games}, perfect ${ps.perfect}` : ''}<div class="bar"><div class="fill" style="width:${(100 * wL / (wAll || 1)).toFixed(1)}%"></div></div>`;
+  const dueN = dueLines().length, newN = newLines().length;
+  $('modes').querySelector('[data-mode=review]').textContent = `Review due (${dueN})`;
+  $('modes').querySelector('[data-mode=learn]').textContent = `Learn new (${newN})`;
+}
+function renderButtons() {
+  const lineMode = S.mode === 'learn' || S.mode === 'review' || S.mode === 'play';
+  $('bHint').disabled = !(lineMode && S.expect); $('bShow').disabled = !(lineMode && S.expect);
+  $('bRestart').disabled = S.mode === 'explore' ? false : !(S.line || S.mode === 'play');
+  $('bBack').style.display = S.mode === 'explore' ? '' : 'none';
+  $('bNext').textContent = S.mode === 'play' ? 'New game' : S.mode === 'explore' ? 'Top' : 'Next line';
+  $('explore').style.display = S.mode === 'explore' ? '' : 'none';
+}
+function setModeButtons() { document.querySelectorAll('#modes button').forEach(b => b.classList.toggle('on', b.dataset.mode === S.mode)); }
+function selectCourse(id) {
+  S.course = REP.courses.find(c => c.id === id) || REP.courses[0]; DB.course = S.course.id; saveDB();
+  S.orient = S.course.color;
+  $('courseTabs').innerHTML = REP.courses.map(c => `<button data-c="${c.id}" class="${c.id === S.course.id ? 'on' : ''}">${c.tab}</button>`).join('');
+  $('courseTabs').querySelectorAll('button').forEach(b => b.onclick = () => { selectCourse(b.dataset.c); nextLine(); });
+  $('title').textContent = S.course.title; $('subtitle').textContent = S.course.subtitle;
+}
+function hint() {
+  if (!S.expect) return;
+  S.hint++; const m = S.expect;
+  if (S.mode !== 'learn') S.mistakes += S.hint === 2 ? 1 : 0;
+  if (S.hint === 1) { S.marks[m.u.slice(0, 2)] = 'hint'; setMsg('Hint: move the circled piece.', 'info'); }
+  else { S.arrowsOn = [{ u: m.u, c: 'g' }]; setMsg(`It's <b>${sanLabel(m, plyOf(cur()))}</b>.`, 'info', m.t, null, m.g === 'trap'); }
+  render();
+}
+function showMove() { if (!S.expect) return; if (S.mode !== 'learn') S.mistakes++; const m = S.expect; S.arrowsOn = [{ u: m.u, c: 'g' }]; setMsg(`It's <b>${sanLabel(m, plyOf(cur()))}</b>. Play it to continue.`, 'info', m.t, null, m.g === 'trap'); render(); }
+
+document.querySelectorAll('#modes button').forEach(b => b.onclick = () => { S.mode = b.dataset.mode; setModeButtons(); nextLine(); });
+$('bHint').onclick = hint; $('bShow').onclick = showMove;
+$('bRestart').onclick = () => { if (S.mode === 'explore') startExplore(); else if (S.mode === 'play') startPlay(); else if (S.line) startLine(S.line, S.mode); };
+$('bNext').onclick = nextLine; $('bBack').onclick = exploreBack;
+$('bFlip').onclick = () => { S.orient = S.orient === 'w' ? 'b' : 'w'; render(); };
+$('bReset').onclick = () => { if (confirm('Reset ALL progress for both courses?')) { DB.srs = {}; DB.playStats = {}; saveDB(); nextLine(); } };
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  const k = e.key.toLowerCase();
+  if (k === 'h') hint(); else if (k === 's') showMove(); else if (k === 'r') $('bRestart').click(); else if (k === 'n') nextLine();
+  else if (k === 'f') $('bFlip').click(); else if ((k === 'arrowleft' || k === 'backspace') && S.mode === 'explore') { e.preventDefault(); exploreBack(); }
+});
+$('savenote').textContent = TEST ? 'TEST MODE (progress not saved)' : 'Progress saves automatically in this browser.';
+
+// ---------- self-test (open with ?test=1) ----------
+function selfTest() {
+  const out = []; let pass = 0, fail = 0; const ok = (c, msg) => { if (c) pass++; else { fail++; out.push('FAIL: ' + msg); } };
+  for (const c of REP.courses) {
+    selectCourse(c.id);
+    // structural checks
+    c.nodes.forEach((n, i) => { const ours = turnOf(n) === c.color; const om = n.m.filter(m => m.o).length;
+      ok(!ours || om <= 1, `${c.id} node ${i} has ${om} own moves`); ok(ours || om === 0, `${c.id} node ${i} own move on opp turn`);
+      if (ours && om) ok((n.L || []).map(x => x.slice(0, 4)).includes(n.m.find(m => m.o).u.slice(0, 4)), `${c.id} node ${i} own move not in legal list`); });
+    // every line: learn mode with correct moves
+    for (const L of c.lines) {
+      startLine(L, 'learn'); let g = 0;
+      while (S.expect && g++ < 200) { const u = S.expect.u; tryMove(u.slice(0, 2), u.slice(2, 4)); }
+      ok(S.finished, `${c.id} ${L.id} did not finish (learn)`);
+      ok(S.node === L.path[L.path.length - 1], `${c.id} ${L.id} wrong end node`);
+      ok(renderedBoardFen() === c.nodes[S.node].f.split(' ')[0], `${c.id} ${L.id} rendered FEN mismatch`);
+      ok(srs(L.id) && srs(L.id).box === 0, `${c.id} ${L.id} srs not created`);
+    }
+    // review perfect -> box 1 ; review with mistake -> box 0 + lapse
+    const L0 = c.lines[0];
+    startLine(L0, 'review'); let g = 0;
+    while (S.expect && g++ < 200) { const u = S.expect.u; tryMove(u.slice(0, 2), u.slice(2, 4)); }
+    ok(srs(L0.id).box === 1 && srs(L0.id).due > now(), `${c.id} perfect review did not promote`);
+    startLine(L0, 'review');
+    const n0 = cur(); const wrongU = (n0.L || []).find(u => u.slice(0, 4) !== S.expect.u.slice(0, 4));
+    if (wrongU) { const before = S.node; tryMove(wrongU.slice(0, 2), wrongU.slice(2, 4)); ok(S.node === before && S.mistakes === 1, `${c.id} wrong move not handled`); }
+    // illegal move is ignored (no mistake)
+    const mBefore = S.mistakes; tryMove('a1', 'h8'); ok(S.mistakes === mBefore || (n0.L || []).includes('a1h8'), `${c.id} illegal move counted`);
+    g = 0; while (S.expect && g++ < 200) { const u = S.expect.u; tryMove(u.slice(0, 2), u.slice(2, 4)); }
+    ok(srs(L0.id).box === 0 && srs(L0.id).lapses === 1, `${c.id} failed review did not demote`);
+    // play mode random walks
+    for (let k = 0; k < 150; k++) { startPlay(); g = 0; while (S.expect && g++ < 200) { const u = S.expect.u; tryMove(u.slice(0, 2), u.slice(2, 4)); } ok(S.finished, `${c.id} play walk ${k} stuck at node ${S.node}`); }
+    // explore: walk first child chain
+    startExplore(); g = 0; while (cur().m.length && g++ < 60) exploreGo(cur().m[0]); ok(cur().m.length === 0, `${c.id} explore did not reach leaf`);
+    while (S.stack.length) exploreBack(); ok(S.node === 0, `${c.id} explore back failed`);
+    out.push(`${c.id}: ${c.lines.length} lines, ${c.nodes.length} nodes, weight sum ${c.lines.reduce((a, L) => a + L.w, 0).toFixed(3)}`);
+  }
+  const el = $('test-out'); el.style.display = 'block';
+  el.textContent = `SELFTEST ${fail ? 'FAIL' : 'PASS'} pass=${pass} fail=${fail}\n` + out.slice(0, 80).join('\n');
+  document.title = `SELFTEST ${fail ? 'FAIL' : 'PASS'}`;
+}
+
+// ---------- boot ----------
+selectCourse(qs.get('course') || DB.course);
+if (TEST) selfTest();
+else {
+  S.mode = qs.get('mode') || (dueLines().length ? 'review' : 'learn'); setModeButtons();
+  if (qs.get('line')) { const L = S.course.lines[+qs.get('line')] || S.course.lines[0]; startLine(L, S.mode === 'explore' || S.mode === 'play' ? 'learn' : S.mode); }
+  else nextLine();
+}
+// screenshot/demo helper: ?auto=K plays K of your moves automatically
+const AUTO = parseInt(qs.get('auto') || '0', 10);
+if (AUTO > 0 && !TEST) { let done = 0; const iv = setInterval(() => { if (done >= AUTO) { clearInterval(iv); return; } if (S.expect) { const u = S.expect.u; done++; tryMove(u.slice(0, 2), u.slice(2, 4)); } }, 700); }
+</script>
+</body>
+</html>

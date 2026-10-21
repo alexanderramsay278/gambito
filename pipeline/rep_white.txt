@@ -1,0 +1,637 @@
+# WHITE REPERTOIRE: 1.e4, then 2.d4 against almost everything.
+# Format: "@ Section | Line name" then moves with {comments}. {!trap ...} marks a trap, {!gambit ...} a deliberate sacrifice.
+
+# ===================== 1...e5 2.d4 exd4 3.c3: DANISH GAMBIT =====================
+@ vs 1...e5 · Danish Gambit | Danish main line: two pawns for a raging attack (5...Nf6 6.e5)
+e4 {Take the centre and open lines for your queen and bishop. The best first move at every level.}
+e5
+d4 {Strike the centre straight away. This is the start of the Danish. At this level 2.d4 scored better than 2.Nf3, 2.Bc4 or the King's Gambit, because most replies to it are already mistakes.}
+exd4
+c3 {!gambit THE DANISH GAMBIT. Offer a pawn so your bishops and knights get out fast. Most 300s take it (83% in a small sample).}
+dxc3
+Bc4 {!gambit Offer a SECOND pawn. Your bishop aims straight at f7, the weakest square in Black's camp.}
+cxb2
+Bxb2 {Now both bishops rake the board: c4 hits f7, b2 hits g7. You're two pawns down, but Stockfish rates it only about -0.4, and your attack is far easier to play than their defence.}
+Nf6
+e5 {Kick the knight with tempo. If it goes to e4, Bxf7+ then Qd5+ forks king and knight.}
+d5 {Black's best: counter-attack your bishop.}
+exf6 {Take the knight. If ...dxc4, swap queens (Qxd8+) and fxg7 wins material back (Stockfish +0.9 for you).}
+Bb4+
+Bc3 {Block with the bishop (better than Nc3 here).}
+Bxc3+
+Nxc3 {Recapture, developing.}
+dxc4
+fxg7 {Pawn takes g7 and attacks the rook. Material is about level and Black's king is stuck in the middle.}
+Rg8
+
+@ vs 1...e5 · Danish Gambit | Danish: 6...Ne4 7.Bxf7+ and Qd5+ wins the piece back
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2 Nf6 e5
+Ne4 {The knight jumps forward, but it can be won back by force.}
+Bxf7+ {Give the bishop to drag the king out.}
+Kxf7
+Qd5+ {Check, and the knight on e4 is attacked: a fork.}
+Ke8
+Qxe4 {Material is level again and Black's king can never castle. Roughly equal. Next: Nf3, O-O, rooks to the centre.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 6...Ng4 7.Nc3 (don't grab the knight!)
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2 Nf6 e5
+Ng4 {It looks free, but it isn't.}
+Nc3 {Develop. Do NOT play Qxg4?: ...d5! hits your queen AND your c4 bishop at once. After Nc3 the game is roughly equal.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 6...Bb4+ 7.Bc3
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2 Nf6 e5
+Bb4+ {Check from the side.}
+Bc3 {Block with the bishop (Stockfish prefers this to Nc3). If ...Bxc3+ Nxc3, the f6 knight is still attacked.}
+
+@ vs 1...e5 · Danish Gambit | Danish: the 5...d5 antidote (know it, few 300s play it)
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2
+d5 {The "book" defence: Black gives a pawn back to stop the attack.}
+Bxd5 {Take it. The bishop now eyes f7 and b7.}
+Nf6
+Bxf7+ {Sacrifice on f7 to drag the king out...}
+Kxf7
+Qxd8 {...and swap queens. Material is level, and the position is a roughly equal endgame where Black's king has lost the right to castle.}
+Bb4+
+Qd2 {Block. The bishop takes your queen, you take the bishop back.}
+Bxd2+
+Nxd2 {Equal endgame. Plan: Ngf3, castle, rooks to the centre. If you reach this, you're doing fine.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 5...Bb4+ 6.Nc3
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2
+Bb4+ {Check, pinning nothing yet.}
+Nc3 {Block with a developing move. If ...Bxc3+, Bxc3 and your bishop is back on the long diagonal.}
+Nf6
+Qb3 {Hit f7 twice (queen + bishop) and pressure b4. Stockfish's choice.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 5...Nc6 6.Nf3
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2
+Nc6
+Nf3 {Develop and get ready to castle. Ideas: O-O, Qb3, Ng5 hitting f7.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 5...d6 6.Nf3
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2
+d6
+Nf3 {Develop and castle next. Keep Qb3 in mind: queen + bishop against f7.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 5...Qf6?? 6.Bxf6 (free queen)
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2
+Qf6 {!trap A real blunder: the queen steps onto your bishop's diagonal.}
+Bxf6 {!trap Bishop takes queen. Always check what your long-diagonal bishop can hit!}
+
+@ vs 1...e5 · Danish Gambit | Danish: 5...Qg5? 6.Nf3! (queen gets chased)
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2
+Qg5 {Attacks g2, but it's too early for queen adventures.}
+Nf3 {Hit the queen and develop. If ...Qxg2, Rg1 traps the queen in your camp.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 5...Be7? 6.Bxg7
+e4 e5 d4 exd4 c3 dxc3 Bc4 cxb2 Bxb2
+Be7 {Too slow. The g7 pawn is now undefended.}
+Bxg7 {Grab g7 and attack the rook on h8.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 4...Nf6 5.Nxc3
+e4 e5 d4 exd4 c3 dxc3 Bc4
+Nf6 {Black refuses the second pawn.}
+Nxc3 {Take back with the knight. One pawn down, but you're far ahead in development: Nf3, O-O, Qb3/e5 next.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 4...Nc6 5.Nxc3
+e4 e5 d4 exd4 c3 dxc3 Bc4
+Nc6
+Nxc3 {Recapture and develop. Plan: Nf3, O-O, Qb3 at f7.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 4...d6 5.Nxc3
+e4 e5 d4 exd4 c3 dxc3 Bc4
+d6
+Nxc3 {Same plan: knight out, Nf3, castle, Qb3.}
+
+@ vs 1...e5 · Danish Gambit | Danish: 4...Bb4 5.Nxc3
+e4 e5 d4 exd4 c3 dxc3 Bc4
+Bb4
+Nxc3 {Recapture with the knight. Don't play Bxf7+ here: it just loses a piece.}
+
+@ vs 1...e5 · Danish Gambit | Danish declined: 3...d5 4.exd5
+e4 e5 d4 exd4 c3
+d5 {Black's best answer: hit back in the centre.}
+exd5 {Take. After ...Qxd5 you play cxd4 and the position is level.}
+Qxd5
+cxd4 {Equal, with an open centre. Develop: Nf3, Nc3 (hitting the queen), Be2, O-O.}
+
+@ vs 1...e5 · Danish Gambit | Danish declined: 3...Nc6 4.cxd4
+e4 e5 d4 exd4 c3
+Nc6
+cxd4 {Take back. You now have the two-pawn centre (e4+d4) that every opening dreams of.}
+
+@ vs 1...e5 · Danish Gambit | Danish declined: 3...Qe7 4.cxd4
+e4 e5 d4 exd4 c3
+Qe7 {Hits e4.}
+cxd4 {Let them take e4 with check, then block with Be3. Your development races ahead.}
+Qxe4+
+Be3 {Develop while blocking. Next Nf3, Nc3 (hitting the queen), Bd3.}
+
+@ vs 1...e5 · Danish Gambit | Danish declined: 3...Nf6 4.e5
+e4 e5 d4 exd4 c3
+Nf6
+e5 {Kick the knight. If ...Ng4?? Qxg4 wins it; if ...Ne4, Qxd4 hits it.}
+Nd5
+Qxd4 {Win your pawn back with a strong centre.}
+
+@ vs 1...e5 · Danish Gambit | Danish declined: 3...d3 4.Bxd3
+e4 e5 d4 exd4 c3
+d3 {Black gives the pawn back to keep lines closed.}
+Bxd3 {Take. You're better: big centre, easy development.}
+
+# ===================== 1...e5 2.d4: PUNISH THE SECOND-MOVE MISTAKES =====================
+@ vs 1...e5 · 2.d4 sidelines | 2...Nc6 3.d5! Nd4?? 4.c3 traps the knight
+e4 e5 d4
+Nc6 {Defends e5, but now the knight can be kicked.}
+d5 {Kick it. The knight has only bad squares left.}
+Nd4 {!trap Played by ~57% of 300s here. The knight is stranded in the middle of your half.}
+c3 {!trap Attack it again. It has no safe square left: you win a piece next move.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Nc6 3.d5 Nce7 4.Nf3
+e4 e5 d4 Nc6 d5
+Nce7 {The sensible retreat.}
+Nf3 {Attack e5 and develop. You have more space; continue Nc3, Bd3/Be2, O-O.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Nc6 3.d5 Nb4 4.a3
+e4 e5 d4 Nc6 d5
+Nb4 {Looks active, but the knight is offside.}
+a3 {Kick it. After ...Na6 take with Bxa6 and their pawns are wrecked.}
+Na6
+Bxa6
+bxa6
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Nc6 3.d5 Nb8 4.Nf3
+e4 e5 d4 Nc6 d5
+Nb8
+Nf3 {Attack e5. You're a full tempo up on a normal game.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...d6 3.Nf3
+e4 e5 d4
+d6 {The Philidor: solid but passive.}
+Nf3 {Develop with pressure on e5.}
+exd4
+Nxd4 {Recentralise. Next Nc3, Be2/Bc4, O-O. You have more space.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...d6 3.Nf3 Nf6 4.dxe5 Nxe4 5.Qd5
+e4 e5 d4 d6 Nf3
+Nf6 {Natural, but it hangs e4 to a trick.}
+dxe5 {Take on e5. If ...Nxe4, Qd5! hits the knight.}
+Nxe4
+Qd5 {Hit the knight. After ...Nc5, Bg5 attacks the queen and keeps up the pressure (Stockfish about +1).}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...d6 3.Nf3 Bg4? 4.dxe5 (Morphy's trick)
+e4 e5 d4 d6 Nf3
+Bg4 {Pins your knight, but it lets you open the position.}
+dxe5 {Hit d6.}
+Bxf3
+Qxf3 {Recapture with the queen. Now Bc4 aims at f7 with queen + bishop.}
+dxe5
+Bc4 {!trap Threat: Qxf7#. Watch for ...Nf6? then Qb3!, hitting f7 and b7 at once.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...d6 3.Nf3 Nc6 4.Bb5
+e4 e5 d4 d6 Nf3
+Nc6
+Bb5 {Pin the knight that defends e5. Next d5 or dxe5 wins material if they're careless.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Qh4? 3.Nf3! (gain time on the queen)
+e4 e5 d4
+Qh4 {Early queen attack on e4. ~9% of 300s play it.}
+Nf3 {Hit the queen. If ...Qxe4+, Be2 and you develop with tempo while their queen gets kicked around.}
+Qxe4+
+Be2 {Block and develop. Next: Nc3 (hitting the queen), O-O, Re1. Your lead in development is huge.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Qh4 3.Nf3 Qh5? 4.Be2! (discovered attack)
+e4 e5 d4 Qh4 Nf3
+Qh5 {!trap A mistake: the queen now sits on the same diagonal as your knight and bishop.}
+Be2 {!trap Line the bishop up behind the knight. Now any knight move uncovers an attack on the queen; after ...exd4, Ng5! then Bh5 hunts it down. Stockfish: +5.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Nf6 3.dxe5 Nxe4 4.Qe2! (the e-file pin)
+e4 e5 d4
+Nf6 {Counter-attacks e4 but leaves e5 hanging.}
+dxe5 {Take and kick the knight.}
+Nxe4
+Qe2 {!trap The knight is pinned to the king on the e-file. If ...d5, exd6 (en passant) and the knight still falls. Stockfish: about +1.8.}
+Nc5
+Nc3 {Develop. Plan: Be3, O-O-O, f4. Black's position is miserable.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Nf6 3.dxe5 Ng4?? 4.Qxg4
+e4 e5 d4 Nf6 dxe5
+Ng4 {!trap The knight goes where your queen can take it.}
+Qxg4 {!trap Queen d1 to g4: a free knight.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...d5? 3.dxe5! (wins a pawn)
+e4 e5 d4
+d5 {Opens everything, but e5 is undefended.}
+dxe5 {Take on e5. Stockfish: +1.9.}
+dxe4
+Qxd8+ {Trade queens with check.}
+Kxd8
+Nc3 {Hit e4. You'll win it back and stay a pawn up, and their king can't castle.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...f6? 3.dxe5 fxe5?? 4.Qh5+ (fork)
+e4 e5 d4
+f6 {!trap Weakens the e8–h5 diagonal. Never good for Black.}
+dxe5
+fxe5 {!trap Recapturing loses on the spot.}
+Qh5+ {!trap Check. If ...g6, Qxe5+ forks king and rook. If ...Ke7, Qxe5+ and Bc4 is coming.}
+g6
+Qxe5+ {!trap Fork: king and rook on h8. Free rook next.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...f6 3.dxe5 Nc6 4.Nf3
+e4 e5 d4 f6 dxe5
+Nc6
+Nf3 {Develop and hold e5. You're a clean pawn up.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Qf6 3.Nc3
+e4 e5 d4
+Qf6 {Defends e5, but the queen is exposed.}
+Nc3 {Develop. Ideas: Nd5 hitting the queen and c7, or Nf3 and dxe5.}
+exd4
+Nd5 {!trap Hit the queen. It must move, and then Nxc7+ forking king and rook is a threat.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Bb4+ 3.c3
+e4 e5 d4
+Bb4+ {Check, but your pawn can kick the bishop.}
+c3 {Block with tempo. The bishop must retreat; then dxe5 wins a pawn.}
+Ba5
+dxe5 {A clean pawn up with a big centre.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Bd6 3.dxe5
+e4 e5 d4
+Bd6 {Blocks the d-pawn. Too passive.}
+dxe5 {Take. If ...Bxe5, Nf3 hits the bishop again.}
+Bxe5
+Nf3
+
+# ===================== 1...d5: SCANDINAVIAN =====================
+@ vs 1...d5 · Scandinavian | 2.exd5 Qxd5 3.Nc3 Qe5+ 4.Be2
+e4
+d5 {Scandinavian: ~13% of 300s play it, the 2nd most common reply.}
+exd5 {Take. The queen has to come out early.}
+Qxd5
+Nc3 {Hit the queen with a developing move. At this level, after 3.Nc3 White scored 61%.}
+Qe5+ {The most common reply (40%). Check, but it blocks nothing.}
+Be2 {Block with a developing move. Next Nf3 hits the queen again.}
+c6
+Nf3 {Chase the queen and develop. Then d4, O-O. Every move gains time.}
+
+@ vs 1...d5 · Scandinavian | 3...Qe5+ 4.Be2 Bg4? 5.d4! (gains time)
+e4 d5 exd5 Qxd5 Nc3 Qe5+ Be2
+Bg4 {Tries to trade off your blocker.}
+d4 {Hit the queen with a pawn. After ...Bxe2 Ngxe2 you're way ahead in development.}
+
+@ vs 1...d5 · Scandinavian | 3...Qd8 4.d4
+e4 d5 exd5 Qxd5 Nc3
+Qd8 {The queen goes home: you've gained two tempi.}
+d4 {Take the centre. Then Nf3, Bd3/Bc4, O-O.}
+Nf6
+Nf3
+
+@ vs 1...d5 · Scandinavian | 3...Qe6+ 4.Be2
+e4 d5 exd5 Qxd5 Nc3
+Qe6+ {The queen blocks her own e-pawn and bishop.}
+Be2 {Block and develop. Next Nf3, d4, O-O. Black's queen is in the way of everything.}
+
+@ vs 1...d5 · Scandinavian | 3...Qa5 4.d4
+e4 d5 exd5 Qxd5 Nc3
+Qa5 {The main-line square.}
+d4 {Centre. Then Nf3, Bc4, Bd2: the Nc3 knight's jumps (Nd5/Nb5) can attack the queen later.}
+Nf6
+Nf3 {Develop. Typical plan: Bc4, Bd2, O-O, Qe2.}
+
+@ vs 1...d5 · Scandinavian | 3...Qd4 4.Nf3
+e4 d5 exd5 Qxd5 Nc3
+Qd4
+Nf3 {Hit the queen again. It's running out of squares; d4 next.}
+
+@ vs 1...d5 · Scandinavian | 3...Qd6 4.d4
+e4 d5 exd5 Qxd5 Nc3
+Qd6
+d4 {Centre first. Nb5 hitting the queen and c7 is an idea later.}
+
+@ vs 1...d5 · Scandinavian | 2...Nf6 3.d4
+e4 d5 exd5
+Nf6 {Black plays to win the pawn back with the knight.}
+d4 {Take the centre. If ...Nxd5, c4 kicks the knight.}
+Nxd5
+c4 {Gain space with tempo. Then Nf3, Nc3, Bd3: a big classical centre.}
+
+@ vs 1...d5 · Scandinavian | 2...c6 3.dxc6 (take the free pawn)
+e4 d5 exd5
+c6 {A gambit by Black.}
+dxc6 {Take it. Develop quickly (Nf3, Bc4/Bb5, O-O) and you're simply a pawn up.}
+Nxc6
+Nf3
+
+# ===================== 1...Nf6: ALEKHINE =====================
+@ vs 1...Nf6 · Alekhine | 2.e5 Nd5 3.d4
+e4
+Nf6 {Alekhine: attacks e4, invites you to push.}
+e5 {Kick the knight. About half of 300s now put it on a losing square (...Ne4 or ...Ng4).}
+Nd5 {The correct retreat.}
+d4 {Build the big centre. Then Nf3, c4 (kicking the knight again), Be2, O-O.}
+d6
+Nf3 {Develop. Stockfish: White comfortably better.}
+
+@ vs 1...Nf6 · Alekhine | 2.e5 Ng4?? 3.Qxg4 (free knight)
+e4 Nf6 e5
+Ng4 {!trap ~14% of 300s play this. The knight is undefended on g4.}
+Qxg4 {!trap Free knight. Stockfish: +6.4.}
+
+@ vs 1...Nf6 · Alekhine | 2.e5 Ne4 3.d4! then f3 traps the knight
+e4 Nf6 e5
+Ne4 {~36% of 300s play this. Every escape square is covered.}
+d4 {!trap Take away c5. Now f3 or Bd3 attacks it and it has nowhere to go.}
+d5
+f3 {!trap The knight is attacked and every retreat is covered: g5 (Bxg5), c5 (dxc5), d6/f6 (e5 takes). You win a piece.}
+
+@ vs 1...Nf6 · Alekhine | 2.e5 Ne4 3.d4 d6 4.f3
+e4 Nf6 e5 Ne4 d4
+d6
+f3 {!trap Same idea: the knight has no safe square.}
+
+@ vs 1...Nf6 · Alekhine | 2.e5 Ne4 3.d4 e6 4.Bd3
+e4 Nf6 e5 Ne4 d4
+e6 {Careful here: after ...e6, the queen can check on h4, so f3 right away is risky.}
+Bd3 {Attack the knight with the bishop instead.}
+
+@ vs 1...Nf6 · Alekhine | 2.e5 Ng8 3.d4
+e4 Nf6 e5
+Ng8 {The knight goes home: free tempo for you.}
+d4 {Big centre. Then Nf3, Bd3/c4, O-O.}
+
+# ===================== 1...e6: FRENCH =====================
+@ vs 1...e6 · French | 2.d4 d5 3.e5 (Advance)
+e4
+e6 {French. Only ~18% of 300s follow up with ...d5 straight away.}
+d4 {Two pawns in the centre.}
+d5
+e5 {The Advance: grab space and cramp Black. Plan: c3, Nf3, Bd3, O-O. Qg4 ideas later.}
+c5
+c3 {Support d4 with a pawn so it can't be won.}
+Nc6
+Nf3 {Develop. Then Bd3/Be2 and O-O.}
+
+@ vs 1...e6 · French | 2.d4 Qh4? 3.Nc3 (300s handle this badly)
+e4 e6 d4
+Qh4 {~19% of 300s play this, and White only scores 45% against it here.}
+Nc3 {Defend e4 with a developing piece. Next Nf3 hits the queen.}
+
+@ vs 1...e6 · French | 2.d4 Qf6 3.e5
+e4 e6 d4
+Qf6
+e5 {Kick the queen with a pawn. Then Nf3, Bd3: more tempo on the queen.}
+
+@ vs 1...e6 · French | 2.d4 Nf6 3.e5 Nd5 4.c4
+e4 e6 d4
+Nf6
+e5 {Kick the knight.}
+Nd5
+c4 {Kick it again. Then Nf3, Nc3: free space for you.}
+
+@ vs 1...e6 · French | 2.d4 Nf6 3.e5 Ng4?? 4.Qxg4
+e4 e6 d4 Nf6 e5
+Ng4 {!trap The knight is undefended on g4.}
+Qxg4 {!trap Free knight.}
+
+@ vs 1...e6 · French | 2.d4 Nc6 3.Nf3
+e4 e6 d4
+Nc6
+Nf3 {Develop. Then Bd3, O-O, c3, or d5 to kick the knight.}
+
+@ vs 1...e6 · French | 2.d4 Bb4+ 3.c3
+e4 e6 d4
+Bb4+
+c3 {Kick the bishop with tempo, then Nf3, Bd3, O-O.}
+
+# ===================== 1...Nc6 / 1...d6 / 1...c6 / 1...c5 / 1...g6 / others =====================
+@ vs 1...Nc6 | 2.d4 d5 3.e5
+e4
+Nc6 {Nimzowitsch Defence. Same plan: second pawn to the centre.}
+d4
+d5
+e5 {Grab space. Then Nf3, c3, Bd3/Be2.}
+
+@ vs 1...Nc6 | 2.d4 e5 3.d5 (same Nd4?? trap)
+e4 Nc6 d4
+e5
+d5 {Kick the knight. Same trap as before: if ...Nd4, c3 wins it.}
+Nd4
+c3 {!trap The knight is trapped.}
+
+@ vs 1...Nc6 | 2.d4 Nxd4?? 3.Qxd4
+e4 Nc6 d4
+Nxd4 {!trap The pawn is defended by your queen.}
+Qxd4 {!trap Free knight.}
+
+@ vs 1...d6 | 2.d4 Nf6 3.Nc3
+e4
+d6 {Pirc/Philidor-type set-up.}
+d4
+Nf6
+Nc3 {Defend e4. Plan: Be3, Qd2, f3, then castle long and attack (the "150 attack").}
+
+@ vs 1...d6 | 2.d4 e5 3.Nf3
+e4 d6 d4
+e5
+Nf3 {Same position as 1...e5 2.d4 d6. Same plan.}
+
+@ vs 1...d6 | 2.d4 g6 3.Nc3
+e4 d6 d4
+g6
+Nc3 {Then Be3, Qd2, castle long; Bh6 to swap their fianchetto bishop.}
+
+@ vs 1...c6 | 2.d4 d5 3.e5 (Advance Caro)
+e4
+c6 {Caro-Kann.}
+d4
+d5
+e5 {Grab space. Plan: Nf3, Be2/Bd3, O-O, c3.}
+Bf5
+Nf3
+
+@ vs 1...c5 | 2.d4 cxd4 3.c3: Smith-Morra Gambit (Danish ideas again)
+e4
+c5 {Sicilian: only ~2% of 300s play it.}
+d4 {Same idea as the Danish.}
+cxd4
+c3 {!gambit Smith-Morra Gambit: one pawn for fast development and open lines.}
+dxc3
+Nxc3 {Recapture and develop. Plan: Nf3, Bc4, O-O, Qe2, Rd1, with pressure on f7 and the d-file.}
+
+@ vs 1...g6 | 2.d4 Bg7 3.Nc3
+e4
+g6 {Modern Defence.}
+d4
+Bg7
+Nc3 {Classical centre. Be3 + Qd2 + castle long next.}
+
+@ vs 1...b6 | 2.d4 Bb7 3.Bd3
+e4
+b6 {Owen's Defence: the bishop will hit e4.}
+d4
+Bb7
+Bd3 {Defend e4 and develop. Then Nf3, O-O, c4.}
+
+@ vs 1...f6?! | 2.d4 g5?? 3.Qh5# (reverse fool's mate)
+e4
+f6 {A weakening move.}
+d4
+g5 {!trap A disaster.}
+Qh5# {!trap Checkmate. The e8–h5 diagonal is wide open.}
+
+# ===================== additions from coverage report (round 1) =====================
+@ vs 1...e5 · 2.d4 sidelines | 2...d6 3.Nf3 Nf6 4.dxe5 dxe5? 5.Qxd8+ and Nxe5 (wins a pawn)
+e4 e5 d4 d6 Nf3 Nf6 dxe5
+dxe5 {!trap The natural recapture, played by about 3 in 4 here. It drops a pawn.}
+Qxd8+ {!trap Trade queens with check. The king has to take...}
+Kxd8
+Nxe5 {!trap ...and e5 is simply gone. Nxf7+ forking king and rook is also in the air. Stockfish: +2.5.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...d6 3.Nf3 c5? 4.dxe5
+e4 e5 d4 d6 Nf3
+c5
+dxe5 {Take. If ...dxe5, Qxd8+ Kxd8 Nxe5 wins a pawn, the same trick. Stockfish: +3.2.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...d6 3.Nf3 f6 4.Bc4
+e4 e5 d4 d6 Nf3
+f6
+Bc4 {Aim at g8 and f7. Black can't castle short safely now. Stockfish: +1.8.}
+
+@ vs 1...e5 · 2.d4 sidelines | 2...Bb4+ 3.c3 Bd6 4.Nf3
+e4 e5 d4 Bb4+ c3
+Bd6
+Nf3 {Develop and pile up on e5. Stockfish: +2.2.}
+
+@ vs 1...f6?! | 2.d4 e5 (same position as 1...e5 2.d4 f6)
+e4 f6 d4
+e5 {This is the same position as 1...e5 2.d4 f6. Play dxe5, and if ...fxe5, Qh5+ forks.}
+
+@ vs 1...d5 · Scandinavian | 3...Qe5+ 4.Be2 Qg5 5.Nf3
+e4 d5 exd5 Qxd5 Nc3 Qe5+ Be2
+Qg5
+Nf3 {Hit the queen again. Then O-O and d4. Stockfish: +2.0.}
+
+@ vs 1...d5 · Scandinavian | 3...Qe5+ 4.Be2 Nc6 5.Nf3
+e4 d5 exd5 Qxd5 Nc3 Qe5+ Be2
+Nc6
+Nf3 {Same idea: the knight hits the queen. Stockfish: +2.0.}
+
+@ vs 1...d5 · Scandinavian | 3...Qe5+ 4.Be2 Nf6 5.Nf3
+e4 d5 exd5 Qxd5 Nc3 Qe5+ Be2
+Nf6
+Nf3 {Knight hits the queen. Then d4, O-O.}
+
+@ vs 1...d5 · Scandinavian | 2...c6 3.dxc6 bxc6 4.d4
+e4 d5 exd5 c6 dxc6
+bxc6
+d4 {You're a clean pawn up. Develop: Nf3, Bd3/Bc4, O-O. Stockfish: +1.9.}
+
+@ vs 1...Nf6 · Alekhine | 2.e5 Nd5 3.d4 e6 4.c4
+e4 Nf6 e5 Nd5 d4
+e6
+c4 {Kick the knight again. Then Nf3, Nc3, Bd3: a huge centre. Stockfish: +1.2.}
+
+@ vs 1...Nf6 · Alekhine | 2.e5 Nd5 3.d4 Nc6 4.c4! Nb6 5.d5
+e4 Nf6 e5 Nd5 d4
+Nc6 {Natural, but it lets you chase both knights.}
+c4 {Kick the d5 knight.}
+Nb6
+d5 {!trap Now kick the other knight. If ...Nxe5, c5! hits the b6 knight; if it takes on d5, your queen takes it back. Stockfish: +3.0.}
+
+@ vs 1...e6 · French | 3.e5 Nc6 4.Nf3
+e4 e6 d4 d5 e5
+Nc6 {The most common move here at this level (~46%).}
+Nf3 {Defend d4 and e5. Then c3, Bd3, O-O.}
+
+@ vs 1...e6 · French | 3.e5 f6 4.Bd3
+e4 e6 d4 d5 e5
+f6
+Bd3 {Aim at g6 and h7. Qh5+ is now a threat. Stockfish: +1.2.}
+
+@ vs 1...e6 · French | 3.e5 Bb4+ 4.c3
+e4 e6 d4 d5 e5
+Bb4+
+c3 {Kick the bishop with tempo.}
+
+@ vs 1...e6 · French | 2...Nf6 3.e5 Ne4 4.Bd3
+e4 e6 d4 Nf6 e5
+Ne4 {About a third of 300s play this.}
+Bd3 {Hit the knight. With ...e6 played, don't rush f3: ...Qh4+ is a trick. Stockfish: +1.6.}
+
+@ vs 1...Nc6 | 2.d4 Nf6 3.e5
+e4 Nc6 d4
+Nf6 {Hits e4.}
+e5 {!ok Kick the knight. If ...Ng4?? Qxg4 wins it; if ...Nd5, it transposes to the Alekhine trick (c4 and d5) that Stockfish rates +3.}
+
+@ vs 1...Nc6 | 2.d4 Nf6 3.e5 Nd5 4.c4 (same as the Alekhine trick)
+e4 Nc6 d4 Nf6 e5
+Nd5 {This is the same position as the Alekhine line: c4, then d5 chases both knights.}
+
+@ vs 1...Nc6 | 2.d4 Nf6 3.e5 Ng4?? 4.Qxg4
+e4 Nc6 d4 Nf6 e5
+Ng4 {!trap The knight is undefended on g4.}
+Qxg4 {!trap Free knight.}
+
+@ vs 1...Nc6 | 2.d4 e6 3.Nf3
+e4 Nc6 d4
+e6
+Nf3 {Develop. Then Bd3, O-O, c3.}
+
+@ vs 1...Nc6 | 2.d4 d6 3.d5
+e4 Nc6 d4
+d6
+d5 {Kick the knight and gain space.}
+
+@ vs 1...d6 | 2.d4 Nc6 3.d5
+e4 d6 d4
+Nc6 {Same position as 1...Nc6 2.d4 d6.}
+
+@ vs 1...d6 | 2.d4 e6 3.Nf3
+e4 d6 d4
+e6
+Nf3
+
+@ vs 1...d6 | 2.d4 c6 3.Nf3
+e4 d6 d4
+c6
+Nf3 {Develop. Then Nc3, Be2/Bd3, O-O.}
+
+@ vs 1...c6 | 2.d4 d5 3.e5 e6 4.Bd3
+e4 c6 d4 d5 e5
+e6
+Bd3 {Develop. Plan: Nf3/Ne2, O-O, c3.}
+
+@ vs 1...c6 | 2.d4 d5 3.e5 Nd7 4.c3
+e4 c6 d4 d5 e5
+Nd7
+c3 {Support d4. Then Bd3, Nf3/Ne2, O-O.}
+
+@ vs 1...c6 | 2.d4 d5 3.e5 f6 4.Nf3
+e4 c6 d4 d5 e5
+f6
+Nf3 {Hold e5 with a piece. If ...fxe5, Nxe5 lands your knight on a great square.}
+
+@ vs 1...c6 | 2.d4 Qa5+ 3.Bd2
+e4 c6 d4
+Qa5+
+Bd2 {Block with tempo: the bishop hits the queen.}
+
+@ vs 1...c5 | 2.d4 d6 3.dxc5
+e4 c5 d4
+d6
+dxc5 {Take. If ...Qa5+, Nc3 then Be3 keeps the extra pawn safe. Stockfish: +1.5.}
+Qa5+
+Nc3
+Qxc5
+Be3 {Develop with tempo on the queen.}
+
+@ vs 1...g6 | 2.d4 Nf6 3.e5
+e4 g6 d4
+Nf6
+e5 {Kick the knight. If ...Nh5, Be2 attacks it. Stockfish: +1.1.}
+
+@ vs 1...g6 | 2.d4 e6 3.Nc3
+e4 g6 d4
+e6
+Nc3 {Classical development.}

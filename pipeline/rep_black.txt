@@ -1,0 +1,671 @@
+# BLACK REPERTOIRE: 1...e5 against almost everything (Englund Gambit vs 1.d4).
+# The #1 job at 300: survive the early queen attacks. ~37% of White players go Qh5/Bc4/Qf3 straight away.
+
+# ===================== 1.e4 e5 2.Qh5 (Wayward Queen, 19% of games) =====================
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qh5 Nc6 3.Bc4 g6 4.Qf3 Nf6: the safe set-up
+e4
+e5 {Meet e4 with e5 and claim your share of the centre.}
+Qh5 {The Wayward Queen. ~19% of 300s play this: it attacks e5 and eyes f7.}
+Nc6 {Defend e5 with a developing move. NOT ...g6?? (Qxe5+ forks your rook) and NOT ...Nf6?? (Qxe5+). This is the right move.}
+Bc4 {Now the threat is Qxf7#: mate.}
+g6 {Kick the queen off the f7 diagonal. ~55% of 300s find this.}
+Qf3 {72% of Whites bring the queen back to aim at f7 again.}
+Nf6 {Block the f-file with the knight: f7 is safe. Do NOT play ...Nd4 first: Qxf7# is mate (10% of 300s lose that way here).}
+d3
+Nd4 {!trap NOW the knight jumps in: it hits the queen and threatens ...Nxc2+ forking king and rook.}
+Qd1
+d5 {Strike the centre while their queen sits at home. You're clearly better.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 4.Qf3 Nf6 5.g4?! Nd4! (wins material)
+e4 e5 Qh5 Nc6 Bc4 g6 Qf3 Nf6
+g4 {Planning g5 to kick your knight.}
+Nd4 {!trap Hit the queen. It has no good square, and ...Nxc2+ is coming too. Stockfish: -6.}
+Qd1
+d5 {Open lines: your bishop hits g4 and the centre opens on their exposed king.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 4.Qf3 Nf6 5.Nc3 Nd4!
+e4 e5 Qh5 Nc6 Bc4 g6 Qf3 Nf6
+Nc3
+Nd4 {!trap Same jump: hit the queen and c2.}
+Qd1
+c6 {Prepare ...d5 to kick the c4 bishop and take the centre.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 4.Qf3 Nf6 5.Ne2 Bg7
+e4 e5 Qh5 Nc6 Bc4 g6 Qf3 Nf6
+Ne2 {The careful move: it guards c3 and d4.}
+Bg7 {Just develop. Castle next. Their queen is clumsy on f3 and you're comfortable.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 4.Qf3 Nf6 5.Qb3? Nd4!
+e4 e5 Qh5 Nc6 Bc4 g6 Qf3 Nf6
+Qb3 {Hits f7 again, through the bishop.}
+Nd4 {!trap Hit the queen with tempo AND threaten ...Nxc2+. Stockfish: -6.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Bc4 g6 4.Qg4? d5! (wins a piece)
+e4 e5 Qh5 Nc6 Bc4 g6
+Qg4 {!trap A mistake: the queen sits on the c8 bishop's diagonal.}
+d5 {!trap Double attack: your pawn hits the c4 bishop and your c8 bishop now hits the queen. White loses a piece.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Bc4 g6 4.Qh3? d5!
+e4 e5 Qh5 Nc6 Bc4 g6
+Qh3 {!trap Same mistake: c8 bishop's diagonal.}
+d5 {!trap The pawn hits the bishop and your c8 bishop hits the queen. You win a piece.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Bc4 g6 4.Qxe5+?? Nxe5 (free queen)
+e4 e5 Qh5 Nc6 Bc4 g6
+Qxe5+ {!trap ~4% of 300s do this. e5 is defended by your knight.}
+Nxe5 {!trap Free queen.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Bc4 g6 4.Qe2 Nd4
+e4 e5 Qh5 Nc6 Bc4 g6
+Qe2
+Nd4 {!trap The jump again: hit the queen and threaten ...Nxc2+.}
+Qd1
+Nf6 {Develop. You're ahead in development and White's queen has wasted three moves.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Bc4 g6 4.Qg5?? Qxg5
+e4 e5 Qh5 Nc6 Bc4 g6
+Qg5 {!trap Undefended queen on your queen's diagonal.}
+Qxg5 {!trap Free queen.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qh5 Nc6 3.Nf3 Nf6! (gain time on the queen)
+e4 e5 Qh5 Nc6
+Nf3 {Attacks e5 again.}
+Nf6 {Hit the queen. e5 is safe: if Qxe5+?? Nxe5 wins the queen.}
+Qh4 {(Qf5 and Qg5 are also common; see the next lines.)}
+Be7 {Develop with a threat: ...Nxe4 would uncover the bishop on the queen.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Nf3 Nf6 4.Qf5? d5! (queen gets chased)
+e4 e5 Qh5 Nc6 Nf3 Nf6
+Qf5 {A common queen move here, and it goes badly for White (they scored ~18% after it, small sample).}
+d5 {!trap Your c8 bishop now hits the queen, and ...dxe4 is coming.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Nf3 Nf6 4.Nxe5?? Nxh5 (free queen)
+e4 e5 Qh5 Nc6 Nf3 Nf6
+Nxe5 {!trap Some 300s forget their queen is attacked.}
+Nxh5 {!trap Free queen.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Nf3 Nf6 4.Qg5 h6
+e4 e5 Qh5 Nc6 Nf3 Nf6
+Qg5
+h6 {Kick it again. Every queen move is a free developing move for you.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 3.Nf3 Nf6 4.Qh3 d5
+e4 e5 Qh5 Nc6 Nf3 Nf6
+Qh3
+d5 {Your c8 bishop hits the queen on h3. Grab the centre.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qh5 Nc6 3.Bb5 Nf6
+e4 e5 Qh5 Nc6
+Bb5
+Nf6 {Hit the queen. (Bxc6 would give up the bishop pair for nothing.)}
+Qf3
+Nd4 {!trap Triple attack: queen on f3, bishop on b5, and c2.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qh5 Nc6 3.Nc3 Nf6
+e4 e5 Qh5 Nc6
+Nc3
+Nf6 {Hit the queen and develop.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qh5 Nc6 3.d3 Nf6
+e4 e5 Qh5 Nc6
+d3
+Nf6 {Hit the queen and develop.}
+
+# ===================== 1.e4 e5 2.Bc4 / 2.Qf3 (Scholar's set-ups) =====================
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.Qf3 Nc6: block, then ...Nd4
+e4 e5
+Bc4 {Bishop at f7. ~12% of 300s; the queen usually follows.}
+Nf6 {Develop and guard h5. The knight also blocks the f-file against Qf3.}
+Qf3 {Threatening nothing yet (your f6 knight blocks), but watch e5 pushes.}
+Nc6 {Develop. Next ...Nd4 hits the queen and c2.}
+g4 {The most common move here (28%): planning g5 to kick your knight.}
+Nd4 {!trap Counter-attack first: the queen and c2 are hit.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.Qf3 Nc6 4.d3 Nd4
+e4 e5 Bc4 Nf6 Qf3 Nc6
+d3
+Nd4 {!trap Hit the queen and threaten ...Nxc2+.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.Qf3 Nc6 4.Nc3 Nd4
+e4 e5 Bc4 Nf6 Qf3 Nc6
+Nc3
+Nd4 {!trap Same idea.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.Qf3 Nc6 4.Nh3 Nd4
+e4 e5 Bc4 Nf6 Qf3 Nc6
+Nh3
+Nd4 {!trap Same idea: queen and c2.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.Nf3 Nc6 (into the Two Knights)
+e4 e5 Bc4 Nf6
+Nf3
+Nc6 {Same position as 2.Nf3 Nc6 3.Bc4 Nf6: the Two Knights.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.d3 Nc6
+e4 e5 Bc4 Nf6
+d3
+Nc6 {Develop. Next ...Bc5 and castle.}
+Nf3
+Bc5 {The quiet Italian. Castle, ...d6, ...h6 against Ng5/Bg5.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.Nc3 Nc6
+e4 e5 Bc4 Nf6
+Nc3
+Nc6 {Develop. If Nf3, ...Nxe4! (the fork trick).}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qf3 Nf6 3.Bc4 Nc6
+e4 e5
+Qf3 {Queen out on move 2: ~6% of 300s.}
+Nf6 {Develop and block the f-file. Your knight also stops e5? ideas.}
+Bc4
+Nc6 {Same position as 2.Bc4 Nf6 3.Qf3 Nc6: ...Nd4 is coming.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qf3 Nf6 3.Nc3 Nc6 4.Nd5 Nd4!
+e4 e5 Qf3 Nf6
+Nc3
+Nc6
+Nd5
+Nd4 {!trap Counter-attack the queen and c2. Don't panic about Nxf6+: you recapture.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qf3 Nf6 3.d3 Nc6
+e4 e5 Qf3 Nf6
+d3
+Nc6 {Develop. ...Nd4 next.}
+
+# ===================== 1.e4 e5 2.Nf3 Nc6 =====================
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.Ng5 d5 5.exd5 Na5! (the sound gambit)
+e4 e5
+Nf3 {The classical move (~36%).}
+Nc6 {Defend e5 with a developing move.}
+Bc4
+Nf6 {The Two Knights: counter-attack e4 instead of being passive.}
+Ng5 {Attacking f7: ~34% of 300s.}
+d5 {Block the bishop's diagonal.}
+exd5
+Na5 {!gambit The key move: hit the bishop, and give a pawn for fast development. NOT ...Nxd5? (Nxf7! the Fried Liver), which 75% of 300s play.}
+Bb5+
+c6 {Block with tempo.}
+dxc6
+bxc6 {Recapture toward the centre. You're a pawn down, but way ahead in development.}
+Be2
+h6 {Kick the knight.}
+Nf3
+e4 {Kick it again. Black has a great initiative here (Stockfish: about equal).}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.Ng5 d5 5.exd5 Na5 6.d3 h6
+e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 d5 exd5 Na5
+d3 {Holding the pawn on d5.}
+h6 {Kick the knight first.}
+Nf3
+e4 {Gain time on the knight. Black's pieces fly out.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.d3 Bc5 (quiet Italian)
+e4 e5 Nf3 Nc6 Bc4 Nf6
+d3
+Bc5 {Develop. Plan: ...d6, ...O-O, ...h6 if they play Bg5/Ng5.}
+c3
+d6 {Solid. Castle next.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.Nc3 Nxe4! (fork trick)
+e4 e5 Nf3 Nc6 Bc4 Nf6
+Nc3
+Nxe4 {!trap The fork trick: take e4, and after Nxe4, ...d5 forks bishop and knight.}
+Nxe4
+d5 {!trap Fork. You win the piece back and keep a great centre.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.O-O Nxe4!
+e4 e5 Nf3 Nc6 Bc4 Nf6
+O-O
+Nxe4 {Take the pawn. If Re1, ...d5 hits the bishop and blocks the file.}
+Re1
+d5 {Fork-trick idea again: the bishop is hit and the e-file is blocked.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.d4 exd4
+e4 e5 Nf3 Nc6 Bc4 Nf6
+d4
+exd4 {Take. If e5, ...d5! hits the bishop.}
+e5
+d5 {Counter-hit the bishop. Then ...Ne4 lands on a great square.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Four Knights: 3.Nc3 Nf6 4.Bc4 Nxe4! (fork trick)
+e4 e5 Nf3 Nc6
+Nc3 {The most common 3rd move at this level (30%).}
+Nf6 {The Four Knights.}
+Bc4
+Nxe4 {!trap The fork trick again.}
+Nxe4
+d5 {!trap Fork bishop and knight: you win the piece back.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Four Knights: 4.Bb5 Nd4!
+e4 e5 Nf3 Nc6 Nc3 Nf6
+Bb5
+Nd4 {Jump in and hit the bishop. If Nxe5?, ...Qe7! hits the knight and e4.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Four Knights: 4.d4 exd4 5.Nxd4 Bb4
+e4 e5 Nf3 Nc6 Nc3 Nf6
+d4
+exd4
+Nxd4
+Bb4 {Pin the knight and pressure e4.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Four Knights: 4.d3 Bb4
+e4 e5 Nf3 Nc6 Nc3 Nf6
+d3
+Bb4 {Pin, then ...d5 or ...O-O.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Scotch: 3.d4 exd4 4.Nxd4 Nf6
+e4 e5 Nf3 Nc6
+d4 {The Scotch (17%).}
+exd4
+Nxd4
+Nf6 {Develop with a hit on e4.}
+Nc3
+Bb4 {Pin and keep hitting e4.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Scotch Gambit: 4.Bc4 Nf6
+e4 e5 Nf3 Nc6 d4 exd4
+Bc4
+Nf6 {Develop and hit e4. Same ideas as the Two Knights.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Göring: 4.c3 d5!
+e4 e5 Nf3 Nc6 d4 exd4
+c3
+d5 {Strike back in the centre instead of grabbing more pawns.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | 3.Bb5 Nf6 (Berlin)
+e4 e5 Nf3 Nc6
+Bb5
+Nf6 {Develop and hit e4.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | 3.d3 Nf6
+e4 e5 Nf3 Nc6
+d3
+Nf6 {Develop. ...Bc5, ...d5, castle.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | 3.c3 Nf6
+e4 e5 Nf3 Nc6
+c3
+Nf6 {Hit e4. If d4, ...Nxe4.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | 3.Nxe5?? Nxe5 (free knight)
+e4 e5 Nf3 Nc6
+Nxe5 {!trap e5 was defended by your knight.}
+Nxe5 {!trap Free knight.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | 3.Ng5?? Qxg5 (free knight)
+e4 e5 Nf3 Nc6
+Ng5 {!trap The knight steps onto your queen's diagonal.}
+Qxg5 {!trap Free knight. d8–g5 is open because your e-pawn moved.}
+
+# ===================== other White 2nd moves =====================
+@ vs 1.e4 · other 2nd moves | 2.Nc3 Nf6 3.Bc4 Nc6
+e4 e5
+Nc3 {The Vienna (~7%).}
+Nf6
+Bc4
+Nc6 {Develop. If Nf3, ...Nxe4! fork trick.}
+
+@ vs 1.e4 · other 2nd moves | 2.Nc3 Nf6 3.Nf3 Nc6 (Four Knights)
+e4 e5 Nc3 Nf6
+Nf3
+Nc6 {Same position as 2.Nf3 Nc6 3.Nc3 Nf6.}
+
+@ vs 1.e4 · other 2nd moves | 2.Nc3 Nf6 3.f4 d5! (Vienna Gambit)
+e4 e5 Nc3 Nf6
+f4
+d5 {Hit back in the centre: the best answer to the Vienna Gambit.}
+
+@ vs 1.e4 · other 2nd moves | 2.Nc3 Nf6 3.Qf3 Nc6
+e4 e5 Nc3 Nf6
+Qf3
+Nc6 {Then ...Nd4 hits the queen and c2.}
+
+@ vs 1.e4 · other 2nd moves | 2.d4 exd4 3.Qxd4 Nc6 4.Qe3 Nf6
+e4 e5
+d4 {~6% of 300s.}
+exd4 {Take.}
+Qxd4 {71% recapture with the queen.}
+Nc6 {Develop with tempo on the queen.}
+Qe3
+Nf6 {Develop. Then ...Bb4/...Be7 and castle.}
+
+@ vs 1.e4 · other 2nd moves | 3.Qxd4 Nc6 4.Qd1 Nf6
+e4 e5 d4 exd4 Qxd4 Nc6
+Qd1
+Nf6 {You're ahead in development. ...Bc5/...Bb4, ...O-O, ...d5.}
+
+@ vs 1.e4 · other 2nd moves | 3.Qxd4 Nc6 4.Qd5 Nf6
+e4 e5 d4 exd4 Qxd4 Nc6
+Qd5
+Nf6 {Develop with a hit on the queen.}
+
+@ vs 1.e4 · other 2nd moves | 3.Qxd4 Nc6 4.Qc4 Nf6
+e4 e5 d4 exd4 Qxd4 Nc6
+Qc4
+Nf6
+
+@ vs 1.e4 · other 2nd moves | 3.Qxd4 Nc6 4.Qa4 Bc5
+e4 e5 d4 exd4 Qxd4 Nc6
+Qa4
+Bc5 {Develop and eye f2.}
+
+@ vs 1.e4 · other 2nd moves | 2.d4 exd4 3.c3 d5! (the Danish antidote)
+e4 e5 d4 exd4
+c3 {The Danish Gambit: the same one you play as White!}
+d5 {The antidote: hit back in the centre.}
+
+@ vs 1.e4 · other 2nd moves | 2.d4 exd4 3.Nf3 Nc6
+e4 e5 d4 exd4
+Nf3
+Nc6 {Develop and hold d4.}
+
+@ vs 1.e4 · other 2nd moves | 2.d3 Nc6
+e4 e5
+d3
+Nc6 {Develop. ...Nf6, ...Bc5, ...d5.}
+Nf3
+Nf6
+
+@ vs 1.e4 · other 2nd moves | 2.f3?! Bc5
+e4 e5
+f3 {Weakens the king.}
+Bc5 {Aim at g1: White can't castle short easily.}
+
+@ vs 1.e4 · other 2nd moves | 2.f4 exf4 (King's Gambit)
+e4 e5
+f4 {The King's Gambit: rare at this level.}
+exf4 {Take the pawn.}
+Nf3
+Nf6 {Develop and hit e4.}
+
+# ===================== 1.d4: ENGLUND GAMBIT =====================
+@ vs 1.d4 · Englund Gambit | 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3?? Bb4! (the famous trap)
+d4
+e5 {!gambit The Englund Gambit: offer a pawn on move 1. A practical weapon at this level, NOT a good opening (Stockfish: about +1.3 for White).}
+dxe5 {About half of 300s take it.}
+Nc6 {Attack the pawn on e5.}
+Nf3 {Defend it.}
+Qe7 {Pile up on e5, and set the trap.}
+Bf4 {Defend e5 again (the most common move here).}
+Qb4+ {!trap Check, with the b2 pawn in your sights.}
+Bd2 {Natural, but it walks into the trap. (In the data, most 300s played Qd2 or c3 instead.)}
+Qxb2 {Grab b2 and attack the rook on a1.}
+Bc3 {!trap The losing move: it looks like it traps your queen.}
+Bb4 {!trap Pin the bishop. If Qd2, ...Bxc3 Qxc3 Qc1# is mate.}
+Qd2
+Bxc3
+Qxc3
+Qc1# {!trap Checkmate.}
+
+@ vs 1.d4 · Englund Gambit | 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Qd2 Qxb2
+d4 e5 dxe5 Nc6 Nf3 Qe7 Bf4 Qb4+
+Qd2 {A common answer at this level, and a blunder.}
+Qxb2 {!trap Grab b2. The rook on a1 can't be saved. Stockfish: -7. This is the Englund trap that actually happens at 300.}
+
+@ vs 1.d4 · Englund Gambit | 3.Nf3 Qe7 4.Bf4 Qb4+ 5.c3? Qxf4! (free bishop)
+d4 e5 dxe5 Nc6 Nf3 Qe7 Bf4 Qb4+
+c3 {!trap Blocks the check and hits your queen, but forgets the bishop on f4.}
+Qxf4 {!trap Take the bishop! The queen slides along the 4th rank. Don't grab b2 here.}
+
+@ vs 1.d4 · Englund Gambit | 3.Nf3 Qe7 4.Bg5 f6
+d4 e5 dxe5 Nc6 Nf3 Qe7
+Bg5 {Hits the queen.}
+f6 {Challenge e5 and block the bishop. If exf6, ...Nxf6 and you're developing fast.}
+
+@ vs 1.d4 · Englund Gambit | 3.Nf3 Qe7 4.Nc3 Nxe5
+d4 e5 dxe5 Nc6 Nf3 Qe7
+Nc3
+Nxe5 {Win the pawn back.}
+
+@ vs 1.d4 · Englund Gambit | 3.f4 d6
+d4 e5 dxe5 Nc6
+f4 {Common here (32%), but it weakens the king.}
+d6 {Open lines while their king is airy. Stockfish: only about +0.3, close to equal.}
+
+@ vs 1.d4 · Englund Gambit | 3.Bf4 Qe7
+d4 e5 dxe5 Nc6
+Bf4
+Qe7 {Pile up on e5. If Nf3, ...Qb4+ is the trap line again.}
+
+@ vs 1.d4 · Englund Gambit | 3.e4 Nxe5
+d4 e5 dxe5 Nc6
+e4
+Nxe5 {Pawn back, and a nice centralised knight.}
+
+@ vs 1.d4 · Englund Gambit | 3.e3 Nxe5
+d4 e5 dxe5 Nc6
+e3
+Nxe5 {Pawn back: equal.}
+
+@ vs 1.d4 · Englund Gambit | 2.Nf3 e4
+d4 e5
+Nf3
+e4 {Kick the knight.}
+
+@ vs 1.d4 · Englund Gambit | 2.e3 exd4 3.exd4 d5
+d4 e5
+e3
+exd4
+exd4
+d5 {Symmetrical and equal. Develop: ...Nf6, ...Bd6, ...O-O.}
+
+@ vs 1.d4 · Englund Gambit | 2.c3 exd4 3.cxd4 d5
+d4 e5
+c3
+exd4
+cxd4
+d5
+
+@ vs 1.d4 · Englund Gambit | 2.e4 exd4 (same as 1.e4 e5 2.d4)
+d4 e5
+e4 {Same position as 1.e4 e5 2.d4.}
+exd4
+
+# ===================== everything else =====================
+@ vs other 1st moves | 1.e3 e5 2.Qh5 Nc6
+e3 {~5% of games.}
+e5
+Qh5 {Early queen again.}
+Nc6 {Defend e5 with a developing move, same as against 1.e4.}
+
+@ vs other 1st moves | 1.e3 e5 2.Qf3 Nf6
+e3 e5
+Qf3
+Nf6 {Block the f-file. ...Nc6/...d5 next.}
+
+@ vs other 1st moves | 1.e3 e5 2.d4 exd4 3.exd4 d5
+e3 e5
+d4
+exd4
+exd4
+d5
+
+@ vs other 1st moves | 1.e3 e5 2.Bc4 Nf6
+e3 e5
+Bc4
+Nf6 {Block the f-file against Qf3/Qh5 ideas.}
+
+@ vs other 1st moves | 1.e3 e5 2.Nf3 e4
+e3 e5
+Nf3
+e4 {Kick the knight.}
+
+@ vs other 1st moves | 1.Nf3 d5
+Nf3 {Rare (4%). The knight stops ...e5.}
+d5 {Take the centre. Then ...Nf6, ...Bf5/...Bg4, ...e6, castle.}
+d4
+Nf6
+
+@ vs other 1st moves | 1.Nc3 e5
+Nc3
+e5 {Centre. If 2.e4, it's the Vienna: ...Nf6.}
+
+@ vs other 1st moves | 1.c4 e5
+c4
+e5
+
+@ vs other 1st moves | 1.g3 e5
+g3
+e5
+
+@ vs other 1st moves | 1.d3 e5
+d3
+e5
+
+@ vs other 1st moves | 1.b3 e5
+b3
+e5
+
+@ vs other 1st moves | 1.f4 e5 (From's Gambit)
+f4 {Bird's Opening.}
+e5 {!gambit From's Gambit. If fxe5, ...d6 exd6 Bxd6 and Qh4+ ideas are deadly.}
+fxe5
+d6
+exd6
+Bxd6 {!trap Threat: ...Qh4+. If Nc3?? then ...Qh4+ g3 Qxg3+ hxg3 Bxg3# is mate.}
+
+@ vs other 1st moves | 1.g4 d5
+g4 {The Grob: weakening.}
+d5 {Centre. If Bg2, ...Bxg4 grabs the pawn.}
+
+# ===================== additions from coverage report (round 1) =====================
+@ vs 1.e4 · Scholar's-mate attacks | 4.Qf3 Nf6 5.Nh3 Nd4!
+e4 e5 Qh5 Nc6 Bc4 g6 Qf3 Nf6
+Nh3 {Planning Ng5 against f7.}
+Nd4 {!trap Hit the queen and c2. Stockfish: -5.4.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.Qf3 Nc6 4.d4 Nxd4!
+e4 e5 Bc4 Nf6 Qf3 Nc6
+d4
+Nxd4 {!trap Take with the knight: it hits the queen and c2 at once. Stockfish: -5.4.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.g4? d5!
+e4 e5 Bc4 Nf6
+g4
+d5 {!trap Hit the bishop and open your c8 bishop onto g4. Stockfish: -3.2.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Bc4 Nf6 3.d3 Nc6 4.Bg5 h6
+e4 e5 Bc4 Nf6 d3 Nc6
+Bg5 {Pins your knight.}
+h6 {Ask the bishop. If Bxf6, ...Qxf6 and you have the two bishops.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qf3 Nf6 3.g4? d5!
+e4 e5 Qf3 Nf6
+g4 {Wants g5 to kick your knight.}
+d5 {!trap Open your c8 bishop onto g4. Stockfish: -2.6.}
+
+@ vs 1.e4 · Scholar's-mate attacks | 2.Qf3 Nf6 3.Nh3 Nc6
+e4 e5 Qf3 Nf6
+Nh3
+Nc6 {Then ...Nd4 hits the queen and c2. Stockfish: -3.0.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.O-O Nxe4 5.d3 Nf6
+e4 e5 Nf3 Nc6 Bc4 Nf6 O-O Nxe4
+d3 {Hits the knight.}
+Nf6 {Retreat. You're simply a pawn up. Stockfish: -0.4.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Two Knights: 4.d4 exd4 5.Nxd4 Nxe4!
+e4 e5 Nf3 Nc6 Bc4 Nf6 d4 exd4
+Nxd4 {Natural, but it leaves e4 hanging.}
+Nxe4 {Grab the pawn. Stockfish rates this slightly better for you (-0.5).}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Quiet Italian: 4.d3 Bc5 5.Ng5 O-O!
+e4 e5 Nf3 Nc6 Bc4 Nf6 d3 Bc5
+Ng5 {Attacks f7 (33% here).}
+O-O {Castle! Now the rook guards f7. If Nxf7?, Rxf7 Bxf7+ Kxf7 gives you two pieces for a rook.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Scotch: 5.Nxc6 bxc6 6.e5 Qe7!
+e4 e5 Nf3 Nc6 d4 exd4 Nxd4 Nf6
+Nxc6 {The most common move here (about half).}
+bxc6 {Recapture toward the centre.}
+e5 {Kicks the knight.}
+Qe7 {Pin the e5 pawn to the king. If the knight retreats, you'll win e5. Equal.}
+
+@ vs 1.e4 · 2.Nf3 Nc6 | Scotch: 4.Ng5?! Be7
+e4 e5 Nf3 Nc6 d4 exd4
+Ng5 {Premature: f7 is defended and the knight is loose.}
+Be7 {Develop with a hit on the knight. Stockfish: -2.0.}
+
+@ vs 1.e4 · other 2nd moves | 2.d3 Nc6 3.Nc3 Nf6
+e4 e5 d3 Nc6
+Nc3
+Nf6 {Develop. ...Bb4 or ...d5 next.}
+
+@ vs 1.e4 · other 2nd moves | 2.d3 Nc6 3.f3 d5
+e4 e5 d3 Nc6
+f3
+d5 {Strike the centre: their kingside is weak. Stockfish: -1.1.}
+
+@ vs 1.e4 · other 2nd moves | 2.f4 exf4 3.d4 Qh4+!
+e4 e5 f4 exf4
+d4
+Qh4+ {Check! The king must step to e2 (g3 just loses more pawns). Stockfish: -1.1.}
+
+@ vs 1.e4 · other 2nd moves | 3.Qxd4 Nc6 4.Qd3 Nf6
+e4 e5 d4 exd4 Qxd4 Nc6
+Qd3
+Nf6 {Develop. ...Bc5 or ...Bb4 next.}
+
+@ vs 1.e4 · other 2nd moves | 2.Nc3 Nf6 3.d3 Bb4
+e4 e5 Nc3 Nf6
+d3
+Bb4 {Pin the knight. ...d5 next.}
+
+@ vs 1.e4 · other 2nd moves | 2.Nc3 Nf6 3.d4 exd4 4.Qxd4 Nc6
+e4 e5 Nc3 Nf6
+d4
+exd4 {Take.}
+Qxd4
+Nc6 {Develop with tempo on the queen.}
+
+@ vs 1.e4 · other 2nd moves | 2.Nc3 Nf6 3.f3 Bc5
+e4 e5 Nc3 Nf6
+f3
+Bc5 {Aim at g1: White can't castle short easily.}
+
+@ vs 1.d4 · Englund Gambit | 2.e3 exd4 3.Qxd4 Nc6
+d4 e5 e3 exd4
+Qxd4
+Nc6 {Develop with tempo on the queen.}
+
+@ vs 1.d4 · Englund Gambit | 2.c3 exd4 3.Qxd4 Nc6
+d4 e5 c3 exd4
+Qxd4
+Nc6 {Develop with tempo on the queen.}
+
+@ vs other 1st moves | 1.Nf3 d5 2.Nc3 Nf6
+Nf3 d5
+Nc3
+Nf6 {Develop. ...Bf5 or ...e6 next.}
+
+@ vs other 1st moves | 1.Nf3 d5 2.e4?! dxe4 3.Ng5 Bf5
+Nf3 d5
+e4 {A gambit.}
+dxe4 {Take it.}
+Ng5
+Bf5 {Defend the pawn and develop. Stockfish: -1.2.}
+
+@ vs other 1st moves | 1.Nf3 d5 2.e3 Nf6
+Nf3 d5
+e3
+Nf6
+
+@ vs other 1st moves | 1.Nf3 d5 2.g3 Nf6
+Nf3 d5
+g3
+Nf6
+
+@ vs other 1st moves | 1.f4 e5 2.e3 exf4
+f4 e5
+e3
+exf4 {Take. After exf4 the material is level, but White's king is airy.}
+
+@ vs other 1st moves | 1.Nf3 d5 2.e4 dxe4 3.Ne5 Nf6
+Nf3 d5 e4 dxe4
+Ne5 {The most common follow-up here (66%).}
+Nf6 {Develop and keep the extra pawn. Stockfish: -1.2.}
+
+@ vs other 1st moves | 1.Nf3 d5 2.e4 dxe4 3.Nd4?? Qxd4
+Nf3 d5 e4 dxe4
+Nd4 {!trap The knight steps onto the open d-file.}
+Qxd4 {!trap Free knight.}

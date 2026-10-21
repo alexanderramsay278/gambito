@@ -1,0 +1,5 @@
+chess>=1.10
+numpy>=2.0
+matplotlib>=3.9
+requests>=2.31
+websocket-client>=1.7
